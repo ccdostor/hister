@@ -2,6 +2,12 @@ FROM alpine:edge
 
 ENV PORT        3000
 
+ENV PASSWORD    password
+ENV SSPATH      /sspath
+ENV GOSTPATH    /gostpath
+ENV BROOKPATH   /brookpath
+ENV V2RAYPATH   /v2raypath
+
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
     apk update && apk add --no-cache ca-certificates caddy shadowsocks-libev && \
     
