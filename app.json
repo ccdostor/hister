@@ -2,6 +2,32 @@
     "name": "heroku",
     "description": "heroku yes",
     "keywords": ["heroku yes"],
+    "env": {
+        "PASSWORD": {
+            "description": "PASSWORD",
+            "value": "password"
+        },
+        "SSPATH": {
+            "description": "SSPATH",
+            "value": "/sspath"
+        },
+        "GOSTPATH": {
+            "description": "GOSTPATH",
+            "value": "/gostpath"
+        },
+        "BROOKPATH": {
+            "description": "BROOKPATH",
+            "value": "/brookpath"
+        },
+        "V2RAYPATH": {
+            "description": "V2RAYPATH",
+            "value": "/v2raypath"        
+        },
+        "UUID": {
+            "description": "V2RAY UUID",
+            "value": "8f91b6a0-e8ee-11ea-adc1-0242ac120002"
+        }
+    },
     "website": "https://github.com/mixool/heroku",
     "repository": "https://github.com/mixool/heroku",
     "stack": "container"
