@@ -42,7 +42,7 @@ v2ray-plugin 插件下载页：https://github.com/shadowsocks/v2ray-plugin/relea
 * 插件程序：D:\APP\v2ray-plugin_windows_amd64.exe  //此处要填插件在电脑上的绝对路径
 * 插件选项: path=/sspath;host=shadowsocks-libev.herokuapp.com;tls //此处改成自己的域名和路径
 
-### gost客户端使用
+### Gost客户端使用
 
 首先下载需要的gost客户端：https://github.com/ginuerzh/gost/releases
 
@@ -64,7 +64,7 @@ Brook客户端下载：https://github.com/txthinking/brook/releases
 
 改成heroku生成的域名和你的密码，运行即可。
 
-### cloudflare workers反代
+### Cloudflare Workers反代
 ```
 addEventListener(
     "fetch",event => {
