@@ -14,7 +14,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposit
     chmod +x /usr/bin/gost && \
     
     brook_URL="$(wget -qO- https://api.github.com/repos/txthinking/brook/releases/latest | grep -E "browser_download_url.*linux_amd64" | cut -f4 -d\")" && \
-    wget -O /usr/bin/brook $URL && \
+    wget -O /usr/bin/brook $brook_URL && \
     chmod +x /usr/bin/brook
 
 
