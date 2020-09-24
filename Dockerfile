@@ -22,7 +22,9 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposit
     wget -qO- https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip | busybox unzip - && \
     
     chmod +x /usr/bin/v2ray-plugin_linux_amd64 /usr/bin/gost /usr/bin/brook && \
-    chmod +x /v2ray /v2ctl
+    chmod +x /v2ray /v2ctl && \
+    
+    rm -rf /var/cache/apk/*
 
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
