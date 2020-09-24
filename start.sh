@@ -27,7 +27,7 @@ header Connection *Upgrade*
 header Upgrade    websocket
 path /brookpath
 }
-reverse_proxy @websocket_gost 127.0.0.1:3234
+reverse_proxy @websocket_brook 127.0.0.1:3234
 EOF
 
 
