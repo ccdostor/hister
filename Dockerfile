@@ -9,9 +9,14 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposit
     wget -O - $v2rayplugin_URL | tar -xz -C /usr/bin/ && \
     chmod +x /usr/bin/v2ray-plugin_linux_amd64 && \
     
-    gost_URL="$(wget -qO- https://api.github.com/repos/ginuerzh/gost/releases/latest | grep -E "browser_download_url.*gost-linux-amd64" | cut -f4 -d\")" && \
+    gost_URL="$(wget -qO- https://api.github.com/repos/ginuerzh/gost/releases/latest | grep -E "browser_download_url.*linux-amd64" | cut -f4 -d\")" && \
     wget -O - $gost_URL | gzip -d > /usr/bin/gost && \
-    chmod +x /usr/bin/gost
+    chmod +x /usr/bin/gost && \
+    
+    brook_URL="$(wget -qO- https://api.github.com/repos/txthinking/brook/releases/latest | grep -E "browser_download_url.*linux_amd64" | cut -f4 -d\")" && \
+    wget -O /usr/bin/brook $URL && \
+    chmod +x /usr/bin/brook
+
 
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
