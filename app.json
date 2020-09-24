@@ -1,0 +1,8 @@
+{
+    "name": "heroku",
+    "description": "heroku yes",
+    "keywords": ["heroku yes"],
+    "website": "https://github.com/mixool/heroku",
+    "repository": "https://github.com/mixool/heroku",
+    "stack": "container"
+}
