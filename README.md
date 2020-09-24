@@ -10,7 +10,7 @@
 
 ### V2ray客户端使用
 
-[v21](https://github.com/yeahwu/kinto/raw/master/img/kinto3.jpg)
+[v21](https://raw.githubusercontent.com/yeahwu/kinto/master/img/kinto3.jpg)
 
 代理协议：VLESS
 
