@@ -7,16 +7,16 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposit
     
     v2rayplugin_URL="$(wget -qO- https://api.github.com/repos/shadowsocks/v2ray-plugin/releases/latest | grep -E "browser_download_url.*linux-amd64" | cut -f4 -d\")" && \
     wget -O - $v2rayplugin_URL | tar -xz -C /usr/bin/ && \
-    chmod +x /usr/bin/v2ray-plugin_linux_amd64 && \
     
     gost_URL="$(wget -qO- https://api.github.com/repos/ginuerzh/gost/releases/latest | grep -E "browser_download_url.*linux-amd64" | cut -f4 -d\")" && \
     wget -O - $gost_URL | gzip -d > /usr/bin/gost && \
-    chmod +x /usr/bin/gost && \
     
-    brook_URL="$(wget -qO- https://api.github.com/repos/txthinking/brook/releases/latest | grep -E "browser_download_url.*linux_amd64" | cut -f4 -d\")" && \
-    wget -O /usr/bin/brook $brook_URL && \
-    chmod +x /usr/bin/brook
-
+    wget -O /usr/bin/brook https://github.com/txthinking/brook/releases/latest/download/brook_linux_amd64 && \
+    
+    wget -qO- https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip | busybox unzip - && \
+    
+    chmod +x /usr/bin/v2ray-plugin_linux_amd64 /usr/bin/gost /usr/bin/brook && \
+    chmod +x /v2ray /v2ctl
 
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
