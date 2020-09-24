@@ -10,13 +10,22 @@
 
 ### V2ray客户端使用
 
-[v21](https://raw.githubusercontent.com/yeahwu/kinto/master/img/kinto3.jpg)
+下载客户端，比如Windows v2rayN：https://github.com/2dust/v2rayN/releases
+
+选择代理协议 VLESS，然后配置如下：
 
 代理协议：VLESS
 
-默认路径：/v2raypath
+* 地址：v2ray.herokuapp.com  //填写heroku生成的域名
+* 端口：443
+* 默认UUID：8f91b6a0-e8ee-11ea-adc1-0242ac120002
+* 加密：none
+* 传输协议：ws
+* 伪装类型：none
+* 路径：/v2raypath
+* 底层传输安全：tls
 
-默认UUID：8f91b6a0-e8ee-11ea-adc1-0242ac120002
+上面需要修改的是UUID和路径，更换UUID页面：https://www.uuidgenerator.net/
 
 ### Shadowsocks客户端使用
 
