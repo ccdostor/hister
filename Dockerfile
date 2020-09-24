@@ -1,6 +1,7 @@
 FROM alpine:edge
 
 ENV PORT        3000
+ENV PV          1.3.1
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
     apk update && apk add --no-cache caddy shadowsocks-libev && \
