@@ -69,7 +69,7 @@ Brook客户端下载：https://github.com/txthinking/brook/releases
 addEventListener(
     "fetch",event => {
         let url=new URL(event.request.url);
-        url.hostname="此处替换成你自己部署的heroku项目域名";
+        url.hostname="appname.herokuapp.com";
         let request=new Request(url,event.request);
         event. respondWith(
             fetch(request)
