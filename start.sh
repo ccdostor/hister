@@ -52,11 +52,6 @@ cat << EOF > /v2ray.json
 }	
 EOF
 
-# start tor v2ray
-nohup tor &
-caddy run --config /etc/caddy/Caddyfile --adapter caddyfile &
-/usr/bin/v2ray/v2ray -config /usr/bin/v2ray/config.json
-
 # start
 caddy run --config /etc/caddy/Caddyfile --adapter caddyfile &
 ss-server -s 127.0.0.1 -p 1234 -k $PASSWORD -m chacha20-ietf-poly1305 --plugin /usr/bin/v2ray-plugin_linux_amd64 --plugin-opts "server;path=/sspath" &
