@@ -1,6 +1,6 @@
-> 提醒： 滥用可能导致账户被BAN！！！
+> 提醒： 滥用可能导致账户被BAN！！！[Telegram讨论群](https://t.me/starts_sh_group)
 
-* 本项目把V2ray，Shadowsocks，Gost，Brook四种代理工具同时部署到heroku空间，方便客户端各取所需！[Telegram讨论群](https://t.me/starts_sh_group)
+* 本项目把V2ray，Shadowsocks，Gost，Brook四种代理工具同时部署到heroku空间，方便客户端各取所需！
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/mixool/heroku)
 
