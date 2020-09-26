@@ -2,7 +2,7 @@ FROM alpine:edge
 
 ENV PORT        3000
 
-ENV PASSWORD    password
+ENV APASSWORD    password
 
 ENV TOREnable   false
 
@@ -17,7 +17,6 @@ ENV BROOKPATH   /brookpath
 
 ENV V2RAYEnable  true
 ENV V2RAYPATH   /v2raypath
-ENV V2RAYCONFIG 
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
     apk update && apk add --no-cache ca-certificates caddy tor shadowsocks-libev && \
