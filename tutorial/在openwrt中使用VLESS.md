@@ -13,11 +13,11 @@
 ***
 
 使用443端口,  图示如下：
-![443端口图示](C:\Users\yang1\Documents\GitHub\heroku\tutorial\img\openwrt-VLESS-443.png)
+![443端口图示](/tutorial/img/openwrt-VLESS-443.png)
 
 ***
 
 使用80端口,  图示如下：
-![80端口图示](C:\Users\yang1\Documents\GitHub\heroku\tutorial\img\openwrt-VLESS-80.png)
+![80端口图示](/tutorial/img/openwrt-VLESS-80.png)
 
 ***
