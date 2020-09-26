@@ -43,7 +43,7 @@
             "description": "V2RAYPATH",
             "value": "/v2raypath"        
         },
-        "UUID": {
+        "AUUID": {
             "description": "V2RAY UUID",
             "value": "8f91b6a0-e8ee-11ea-adc1-0242ac120002"
         },
