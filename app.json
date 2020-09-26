@@ -5,7 +5,7 @@
     "env": {
 	"AA": {
             "description": "初阶用户只需填写App name后按需修改以下APASSWORD和AUUID两项后点击页面最后的Deploy app按钮即可完成部署",
-            "value": "自定义参数前请务必充分理解其含义",
+            "value": "使用自定义参数请务必充分理解其含义",
 	    "required": false
         },
         "APASSWORD": {
