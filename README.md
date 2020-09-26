@@ -8,6 +8,8 @@
 
 点击上面紫色`Deploy to Heroku`，会跳转到heroku app创建页面，填上app的名字、修改密码、修改UUID、记住路径，当然用默认的也没问题。然后点击下面deploy创建APP，完成后会生成一个域名，到此服务端也就部署完成了。记下域名，后面客户端会用到。
 
+### 更多客户端使用可以查看这里(欢迎热心网友PR): https://github.com/mixool/heroku/tree/master/tutorial
+
 ### V2ray客户端使用
 
 下载客户端，比如Windows v2rayN：https://github.com/2dust/v2rayN/releases
