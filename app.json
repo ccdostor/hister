@@ -8,7 +8,7 @@
             "value": "password"
         },
 	"TOREnable": {
-            "description": "是否启用TOR功能，用于V2RAY从网络读取自定义的配置文件时提供TOR网络分流支持",
+            "description": "是否启用TOR功能，默认关闭，如配置V2RAY从网络读取自定义的配置文件时提供TOR网络分流支持可设置为true打开",
             "value": "false"
         },
 	"SSEnable": {
