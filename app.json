@@ -3,7 +3,7 @@
     "description": "heroku yes",
     "keywords": ["heroku yes"],
     "env": {
-        "PASSWORD": {
+        "APASSWORD": {
             "description": "PASSWORD",
             "value": "password"
         },
