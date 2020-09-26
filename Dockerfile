@@ -1,23 +1,5 @@
 FROM alpine:edge
 
-ENV PORT        3000
-
-ENV APASSWORD    password
-
-ENV TOREnable   false
-
-ENV SSEnable    true
-ENV SSPATH      /sspath
-
-ENV GOSTEnable  true
-ENV GOSTPATH    /gostpath
-
-ENV BROOKEnable  true
-ENV BROOKPATH   /brookpath
-
-ENV V2RAYEnable  true
-ENV V2RAYPATH   /v2raypath
-
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
     apk update && apk add --no-cache ca-certificates caddy tor shadowsocks-libev && \
     v2rayplugin_URL="$(wget -qO- https://api.github.com/repos/shadowsocks/v2ray-plugin/releases/latest | grep -E "browser_download_url.*linux-amd64" | cut -f4 -d\")" && \
