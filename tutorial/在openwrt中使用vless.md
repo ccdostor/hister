@@ -8,13 +8,10 @@
 
 具体设置请看图片示例。
 
-<font face="微软雅黑" size=5>在openwrt中配置:</font> 
-
+在openwrt中配置:
 
 使用443端口,  图示如下：
 ![443端口图示](https://github.com/yang123me/heroku/blob/master/tutorial/img/openwrt%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B%20VLESS%20-%20443%20-%20Heroku%2BCloudflare.png)
-
-
 
 使用80端口,  图示如下：
 ![80端口图示](https://github.com/yang123me/heroku/blob/master/tutorial/img/openwrt%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B%20VLESS%20-%2080%20-%20Heroku%2BCloudflare.png)
