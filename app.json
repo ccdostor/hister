@@ -47,8 +47,9 @@
             "description": "V2RAY UUID",
             "value": "8f91b6a0-e8ee-11ea-adc1-0242ac120002"
         },
-		"V2RAYCONFIG": {
+        "V2RAYCONFIG": {
             "description": "LOAD V2RAY CONFIG FROM Network",
+	    "required": "false"
             "value": ""
         }
     },
