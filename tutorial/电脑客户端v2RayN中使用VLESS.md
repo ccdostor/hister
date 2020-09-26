@@ -12,12 +12,12 @@
 
 使用443端口：
 
-![443端口图示](tutorial/img/Windows-v2RayN-VLESS-443.png)
+![443端口图示](/tutorial/img/Windows-v2RayN-VLESS-443.png)
 
 ***
 
 使用80端口：
 
-![80端口图示](tutorial/img/Windows-v2RayN-VLESS-80.png)
+![80端口图示](/tutorial/img/Windows-v2RayN-VLESS-80.png)
 
 ***
