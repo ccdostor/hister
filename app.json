@@ -49,7 +49,7 @@
         },
         "V2RAYCONFIG": {
             "description": "LOAD V2RAY CONFIG FROM Network",
-	    "required": "false",
+	    "required": "False",
             "value": ""
         }
     },
