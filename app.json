@@ -7,17 +7,37 @@
             "description": "PASSWORD",
             "value": "password"
         },
+		"TOREnable": {
+            "description": "Enable tor: true or false",
+            "value": "false"
+        },
+		"SSEnable": {
+            "description": "Enable SS: true or false",
+            "value": "true"
+        },
         "SSPATH": {
             "description": "SSPATH",
             "value": "/sspath"
+        },
+		"GOSTEnable": {
+            "description": "Enable GOST: true or false",
+            "value": "true"
         },
         "GOSTPATH": {
             "description": "GOSTPATH",
             "value": "/gostpath"
         },
+		"BROOKEnable": {
+            "description": "Enable BROOK: true or false",
+            "value": "true"
+        },
         "BROOKPATH": {
             "description": "BROOKPATH",
             "value": "/brookpath"
+        },
+		"V2RAYEnable": {
+            "description": "Enable V2RAY: true or false",
+            "value": "true"
         },
         "V2RAYPATH": {
             "description": "V2RAYPATH",
@@ -26,6 +46,10 @@
         "UUID": {
             "description": "V2RAY UUID",
             "value": "8f91b6a0-e8ee-11ea-adc1-0242ac120002"
+        },
+		"V2RAYCONFIG": {
+            "description": "LOAD V2RAY CONFIG FROM Network",
+            "value": ""
         }
     },
     "website": "https://github.com/mixool/heroku",
