@@ -7,11 +7,11 @@
             "description": "PASSWORD",
             "value": "password"
         },
-		"TOREnable": {
+	"TOREnable": {
             "description": "Enable tor: true or false",
             "value": "false"
         },
-		"SSEnable": {
+	"SSEnable": {
             "description": "Enable SS: true or false",
             "value": "true"
         },
@@ -19,7 +19,7 @@
             "description": "SSPATH",
             "value": "/sspath"
         },
-		"GOSTEnable": {
+	"GOSTEnable": {
             "description": "Enable GOST: true or false",
             "value": "true"
         },
@@ -27,7 +27,7 @@
             "description": "GOSTPATH",
             "value": "/gostpath"
         },
-		"BROOKEnable": {
+	"BROOKEnable": {
             "description": "Enable BROOK: true or false",
             "value": "true"
         },
@@ -35,7 +35,7 @@
             "description": "BROOKPATH",
             "value": "/brookpath"
         },
-		"V2RAYEnable": {
+	"V2RAYEnable": {
             "description": "Enable V2RAY: true or false",
             "value": "true"
         },
@@ -49,7 +49,7 @@
         },
         "V2RAYCONFIG": {
             "description": "LOAD V2RAY CONFIG FROM Network",
-	    "required": "false"
+	    "required": "false",
             "value": ""
         }
     },
