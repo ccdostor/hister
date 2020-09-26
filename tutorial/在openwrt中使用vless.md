@@ -8,7 +8,7 @@
 
 具体设置请看图片示例。
 
-<font face="微软雅黑" size=4>在openwrt中配置:</font> 
+<font face="微软雅黑" size=5>在openwrt中配置:</font> 
 
 
 使用443端口,  图示如下：
