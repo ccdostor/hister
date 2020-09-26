@@ -10,13 +10,13 @@
 
 在电脑客户端 v2RayN 中配置：
 
-****
+***
 
 使用443端口：
 ![443端口图示](https://github.com/yang123me/heroku/blob/master/tutorial/img/%E5%AE%A2%E6%88%B7%E7%AB%AFv2RayN-VLESS-443.png)
 
-****
+***
 
 使用80端口：
 ![80端口图示](https://github.com/yang123me/heroku/blob/master/tutorial/img/%E5%AE%A2%E6%88%B7%E7%AB%AFv2RayN-VLESS-80.png)
-****
+***
