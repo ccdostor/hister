@@ -3,13 +3,24 @@ FROM alpine:edge
 ENV PORT        3000
 
 ENV PASSWORD    password
+
+ENV TOREnable   false
+
+ENV SSEnable    true
 ENV SSPATH      /sspath
+
+ENV GOSTEnable  true
 ENV GOSTPATH    /gostpath
+
+ENV BROOKEnable  true
 ENV BROOKPATH   /brookpath
+
+ENV V2RAYEnable  true
 ENV V2RAYPATH   /v2raypath
+ENV V2RAYCONFIG 
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
-    apk update && apk add --no-cache ca-certificates caddy shadowsocks-libev && \
+    apk update && apk add --no-cache ca-certificates caddy tor shadowsocks-libev && \
     v2rayplugin_URL="$(wget -qO- https://api.github.com/repos/shadowsocks/v2ray-plugin/releases/latest | grep -E "browser_download_url.*linux-amd64" | cut -f4 -d\")" && \
     wget -O - $v2rayplugin_URL | tar -xz -C /usr/bin/ && \
     gost_URL="$(wget -qO- https://api.github.com/repos/ginuerzh/gost/releases/latest | grep -E "browser_download_url.*linux-amd64" | cut -f4 -d\")" && \
