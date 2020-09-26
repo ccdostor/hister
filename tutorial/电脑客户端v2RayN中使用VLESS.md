@@ -14,7 +14,7 @@
 
 使用443端口：
 
-![443端口图示](https://github.com/mixool/heroku/tree/master/tutorial/img/%E5%AE%A2%E6%88%B7%E7%AB%AFv2RayN-VLESS-443.png)
+![443端口图示](https://github.com/mixool/heroku/raw/master/tutorial/img/%E5%AE%A2%E6%88%B7%E7%AB%AFv2RayN-VLESS-443.png)
 
 ***
 
