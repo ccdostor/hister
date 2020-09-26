@@ -16,6 +16,10 @@
             "description": "是否启用TOR功能，默认关闭，如配置V2RAY从网络读取自定义的配置文件时提供TOR网络分流支持可设置为true打开",
             "value": "false"
         },
+	"IndexPage": {
+            "description": "自定义部署完成后点击View显示的页面内容",
+            "value": "https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html"
+        },
 	"SSEnable": {
             "description": "是否启用SS，默认启用，修改为其他值时关闭",
             "value": "true"
