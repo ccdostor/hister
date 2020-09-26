@@ -50,7 +50,7 @@
         "V2RAYCONFIG": {
             "description": "LOAD V2RAY CONFIG FROM Network",
             "value": "",
-	    "required": "false"
+	    "required": false
         }
     },
     "website": "https://github.com/mixool/heroku",
