@@ -11,7 +11,7 @@
 在openwrt中配置:
 
 使用443端口,  图示如下：
-https://github.com/yang123me/heroku/tree/master/tutorial/img/openwrt使用示例 VLESS - 443 - Heroku+Cloudflare.png
+heroku/tutorial/img/openwrt使用示例 VLESS - 80 - Heroku+Cloudflare.png
 
 使用80端口,  图示如下：
-https://github.com/yang123me/heroku/tree/master/tutorial/img/openwrt使用示例 VLESS - 80 - Heroku+Cloudflare.png
+heroku/tutorial/img/openwrt使用示例 VLESS - 80 - Heroku+Cloudflare.png
