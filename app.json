@@ -3,6 +3,11 @@
     "description": "heroku yes",
     "keywords": ["heroku yes"],
     "env": {
+	"AA": {
+            "description": "初阶用户只需填写App name后按需修改以下APASSWORD和AUUID两项后点击页面最后的Deploy app按钮即可完成部署",
+            "value": "",
+	    "required": false
+        },
         "APASSWORD": {
             "description": "自定义用于SS和BROOK以及GOST的密码",
             "value": "password"
