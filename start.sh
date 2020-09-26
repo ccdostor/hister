@@ -52,9 +52,12 @@ cat << EOF > /v2ray.json
 }	
 EOF
 
+[[ "$V2RAYCONFIG" != "" ]] && wget -O /v2ray.json $V2RAYCONFIG
+
 # start
 caddy run --config /etc/caddy/Caddyfile --adapter caddyfile &
-ss-server -s 127.0.0.1 -p 1234 -k $PASSWORD -m chacha20-ietf-poly1305 --plugin /usr/bin/v2ray-plugin_linux_amd64 --plugin-opts "server;path=$SSPATH" &
-gost -L ss+ws://AEAD_CHACHA20_POLY1305:$PASSWORD@127.0.0.1:2234?path=$GOSTPATH &
-brook wsserver -l 127.0.0.1:3234 --path $BROOKPATH -p $PASSWORD &
-/v2ray -config /v2ray.json
+[[ "$TOREnable"      ==    "true" ]]    &&    tor &
+[[ "$SSEnable"       ==    "true" ]]    &&    ss-server -s 127.0.0.1 -p 1234 -k $PASSWORD -m chacha20-ietf-poly1305 --plugin /usr/bin/v2ray-plugin_linux_amd64 --plugin-opts "server;path=$SSPATH" &
+[[ "$GOSTEnable"     ==    "true" ]]    &&    gost -L ss+ws://AEAD_CHACHA20_POLY1305:$PASSWORD@127.0.0.1:2234?path=$GOSTPATH &
+[[ "$BROOKEnable"    ==    "true" ]]    &&    brook wsserver -l 127.0.0.1:3234 --path $BROOKPATH -p $PASSWORD &
+[[ "$V2RAYEnable"    ==    "true" ]]    &&    /v2ray -config /v2ray.json
