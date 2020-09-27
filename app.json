@@ -60,11 +60,6 @@
             "description": "自定义网络地址读取配置运行V2RAY，不熟悉V2RAY配置的请勿填写",
             "value": "",
 	    "required": false
-        },
-	"CADDYCONFIG": {
-            "description": "自定义网络地址读取配置运行CADDY，不熟悉CADDY配置的请勿填写",
-            "value": "",
-	    "required": false
         }
     },
     "website": "https://github.com/mixool/heroku",
