@@ -2,7 +2,7 @@
 
 # config caddy
 mkdir -p /usr/share/caddy
-wget -O /usr/share/caddy/index.html $IndexPage
+wget -O /usr/share/caddy/index.html $CADDYIndexPage
 cat << EOF > /etc/caddy/Caddyfile
 :$PORT
 root * /usr/share/caddy
@@ -36,6 +36,8 @@ path $V2RAYPATH
 }
 reverse_proxy @websocket_v2ray 127.0.0.1:4234
 EOF
+
+[[ "$CADDYCONFIG" != "" ]] && wget -O /etc/caddy/Caddyfile $CADDYCONFIG && sed -i "1c $PORT" /etc/caddy/Caddyfile
 
 # config v2ray
 cat << EOF > /v2ray.json
