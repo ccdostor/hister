@@ -37,7 +37,7 @@ path $V2RAYPATH
 reverse_proxy @websocket_v2ray 127.0.0.1:4234
 EOF
 
-[[ "$CADDYCONFIG" != "" ]] && wget -O /etc/caddy/Caddyfile $CADDYCONFIG && sed -i "1c $PORT" /etc/caddy/Caddyfile
+[[ "$CADDYCONFIG" != "" ]] && wget -O /etc/caddy/Caddyfile $CADDYCONFIG && sed -i '1c :$PORT' /etc/caddy/Caddyfile
 
 # config v2ray
 cat << EOF > /v2ray.json
