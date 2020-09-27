@@ -8,6 +8,8 @@ cat << EOF > /etc/caddy/Caddyfile
 root * /usr/share/caddy
 file_server
 
+$CADDYMORE
+
 @websocket_ss {
 header Connection *Upgrade*
 header Upgrade    websocket
