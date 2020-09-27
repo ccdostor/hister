@@ -16,8 +16,8 @@
 
 ***
 
-使用80端口：
+用Cloudflare反代后，使用443端口：
 
-![80端口图示](/tutorial/img/Windows-v2RayN-VLESS-80.png)
+![80端口图示](/tutorial/img/Windows-v2RayN-VLESS-443+Cloudflare.png)
 
 ***
