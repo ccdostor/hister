@@ -10,8 +10,9 @@
   * 点击Manage App可在Settings下的Config Vars项查看和重新设置参数
   * 点击View跳转的欢迎页面域名即为heroku分配的项目域名，格式为`appname.herokuapp.com`，客户端会用到这个域名
   
-### 客户端使用简要(windows)，
-> 替换所有的appname.herokuapp.com为heroku分配的项目域名，按需替换其它自定义参数
+### 客户端使用简要-windows
+> 替换所有的appname.herokuapp.com为heroku分配的项目域名，按需替换其它自定义参数  
+  
 > [更多来自热心网友PR的使用教程](https://github.com/mixool/heroku/tree/master/tutorial)
   
 1. [windows v2rayN 客户端下载](https://github.com/2dust/v2rayN/releases)  
