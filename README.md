@@ -4,22 +4,22 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/mixool/heroku)
 
-### 部署服务端
+### 服务端
 
-点击上面紫色`Deploy to Heroku`，会跳转到heroku app创建页面，填上app的名字、修改密码、修改UUID、记住路径，当然用默认的也没问题。然后点击下面deploy创建APP，完成后会生成一个域名，到此服务端也就部署完成了。记下域名，后面客户端会用到。  
-部署时设置的参数可以在heroku对应app的Settings下点击Reveal Config Vars查看或重新设置  
+点击上面紫色`Deploy to Heroku`，会跳转到heroku app创建页面，填上app的名字、选择节点、按需修改部分参数或者使用默认值后点击下面deploy创建app即可开始部署
+如出现错误，可以多尝试几次，待部署完成后页面底部会显示Your app was successfully deployed
+  * 点击Manage App可在Settings下的Config Vars项查看和重新设置参数
+  * 点击View跳转的欢迎页面域名即为heroku分配的项目域名，格式为`appname.herokuapp.com`，客户端会用到这个域名
   
 ##### [参考更多来自热心网友PR的使用教程](https://github.com/mixool/heroku/tree/master/tutorial)
 
-### V2ray客户端使用
+### 客户端
+* 替换所有的appname.herokuapp.com为heroku分配的项目域名，按需替换其它自定义参数
 
-下载客户端，比如Windows v2rayN：https://github.com/2dust/v2rayN/releases
-
-选择代理协议 VLESS，然后配置如下：
-
-代理协议：VLESS
-
-* 地址：v2ray.herokuapp.com  //填写heroku生成的域名
+#### V2ray-Windows客户端
+[Windows v2rayN 客户端](https://github.com/2dust/v2rayN/releases)
+* 代理协议：vless
+* 地址：appname.herokuapp.com
 * 端口：443
 * 默认UUID：8f91b6a0-e8ee-11ea-adc1-0242ac120002
 * 加密：none
@@ -27,52 +27,31 @@
 * 伪装类型：none
 * 路径：/v2raypath
 * 底层传输安全：tls
-
-上面需要修改的是UUID和路径，更换UUID页面：https://www.uuidgenerator.net/
-
-### Shadowsocks客户端使用
-
-首先下载 v2ray-plugin 插件到电脑，下载解压后移动到常用文件夹，记住插件所在文件夹路径，待会会用到。
-
-v2ray-plugin 插件下载页：https://github.com/shadowsocks/v2ray-plugin/releases
-
-然后，下载ss客户端，比如[Windows客户端](https://github.com/shadowsocks/shadowsocks-windows/releases/)，这个不多讲。配置如下：
-
-* 服务器地址: shadowsocks-libev.herokuapp.com  //此处填写服务端生成的域名
+  
+#### Shadowsocks-Windows客户端
+[SS-Windows客户端](https://github.com/shadowsocks/shadowsocks-windows/releases/)和[v2ray-plugin插件](https://github.com/shadowsocks/v2ray-plugin/releases)
+* 服务器地址: appname.herokuapp.com
 * 端口: 443
 * 密码：password
 * 加密：chacha20-ietf-poly1305
-* 插件程序：D:\APP\v2ray-plugin_windows_amd64.exe  //此处要填插件在电脑上的绝对路径
-* 插件选项: path=/sspath;host=shadowsocks-libev.herokuapp.com;tls //此处改成自己的域名和路径
+* 插件程序：D:\APP\v2ray-plugin_windows_amd64.exe  //此处要填插件解压后在电脑上的绝对路径
+* 插件选项: path=/sspath;host=appname.herokuapp.com;tls
+  
+#### Gost-Windows客户端
+[Gost客户端下载](https://github.com/ginuerzh/gost/releases)
+Windows端，选择`gost-windows-amd64-2.11.1.zip` ，解压后复制gost.exe文件在电脑中的绝对路径，新建run.bat文件双击运行，run.bat文件内容：
+`C:\Users\Administrator\App\gost\gost-windows-amd64.exe -L :1080 -F=ss+wss://AEAD_CHACHA20_POLY1305:password@appname.herokuapp.com:443?path=/gostpath`
 
-### Gost客户端使用
+#### Brook-Windows客户端使用
+[Brook客户端下载](https://github.com/txthinking/brook/releases)
+Windows端，选择`Brook.exe`下载运行，配置`wsserver`内容`wss://appname.herokuapp.com:443/brookpath`以及密码`password`
 
-首先下载需要的gost客户端：https://github.com/ginuerzh/gost/releases
-
-比如Windows端，选择`gost-windows-amd64-2.11.1.zip` 下载解压，然后记住exe文件在电脑中的绝对路径。
-
-新建一个bat文件，比如`gost.bat` 如下：
-
-`C:\Users\Administrator\App\gost\gost-windows-amd64.exe -L :10998 -F=ss+wss://AEAD_CHACHA20_POLY1305:password@gost.herokuapp.com:443?path=/gostpath`
-
-改成heroku生成的域名和密码，每次点击`gost.bat`运行即可。
-
-### Brook客户端使用
-
-Brook客户端下载：https://github.com/txthinking/brook/releases
-
-比如Windows端，选择`Brook.exe` 下载，运行，选择 `wsserver` 填写：
-
-`wss://brook.herokuapp.com:443/brookpath`
-
-改成heroku生成的域名和你的密码，运行即可。
-
-### Cloudflare Workers反代
+##### [Cloudflare Workers](https://github.com/CCChieh/IBMYes#cloudflare-%E9%AB%98%E9%80%9F%E8%8A%82%E7%82%B9%E4%B8%AD%E8%BD%AC)
 ```
 addEventListener(
     "fetch",event => {
         let url=new URL(event.request.url);
-        url.hostname="此处替换成你自己部署的heroku项目域名";
+        url.hostname="appname.herokuapp.com";
         let request=new Request(url,event.request);
         event. respondWith(
             fetch(request)
@@ -80,5 +59,3 @@ addEventListener(
     }
 )
 ```
-
-### [LICENSE](https://raw.githubusercontent.com/mixool/heroku/master/LICENSE)
