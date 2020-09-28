@@ -45,6 +45,11 @@
             "description": "GOST路径",
             "value": "/gostpath"
         },
+	"GOSTMETHOD": {
+            "description": "自定义GOST运行参数，不熟悉GOST配置的请勿填写",
+            "value": "",
+	    "required": false
+        },
 	"BROOKEnable": {
             "description": "是否启用BROOK，默认启用，修改为其他值时关闭",
             "value": "true"
