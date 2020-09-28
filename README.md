@@ -6,8 +6,9 @@
 
 ### 部署服务端
 
-点击上面紫色`Deploy to Heroku`，会跳转到heroku app创建页面，填上app的名字、修改密码、修改UUID、记住路径，当然用默认的也没问题。然后点击下面deploy创建APP，完成后会生成一个域名，到此服务端也就部署完成了。记下域名，后面客户端会用到。
-
+点击上面紫色`Deploy to Heroku`，会跳转到heroku app创建页面，填上app的名字、修改密码、修改UUID、记住路径，当然用默认的也没问题。然后点击下面deploy创建APP，完成后会生成一个域名，到此服务端也就部署完成了。记下域名，后面客户端会用到。  
+部署时设置的参数可以在heroku对应app的Settings下点击Reveal Config Vars查看或重新设置  
+  
 ##### [参考更多来自热心网友PR的使用教程](https://github.com/mixool/heroku/tree/master/tutorial)
 
 ### V2ray客户端使用
