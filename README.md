@@ -44,6 +44,8 @@ C:\Users\Administrator\App\gost\gost-windows-amd64.exe -L :1080 -F=ss+wss://AEAD
   
 5. [Cloudflare Workers](https://github.com/CCChieh/IBMYes#cloudflare-%E9%AB%98%E9%80%9F%E8%8A%82%E7%82%B9%E4%B8%AD%E8%BD%AC)  
 <details>
+<summary>Example)</summary>
+
 ```json
 addEventListener(
     "fetch",event => {
