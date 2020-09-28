@@ -46,7 +46,7 @@ C:\Users\Administrator\App\gost\gost-windows-amd64.exe -L :1080 -F=ss+wss://AEAD
 <details>
 <summary>Example)</summary>
 
-```json
+```js
 addEventListener(
     "fetch",event => {
         let url=new URL(event.request.url);
