@@ -1,6 +1,6 @@
 > 提醒： 滥用可能导致账户被BAN！！！[Telegram讨论群](https://t.me/starts_sh_group)  
   
-* 本项目把V2ray，Shadowsocks，Gost，Brook四种代理工具同时部署到heroku空间，方便客户端各取所需！  
+* 本项目把v2ray，shadowsocks，gost，brook四种代理工具同时部署到heroku空间，方便客户端各取所需！  
   
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/mixool/heroku)  
   
@@ -10,8 +10,8 @@
   * 点击Manage App可在Settings下的Config Vars项查看和重新设置参数
   * 点击View跳转的欢迎页面域名即为heroku分配的项目域名，格式为`appname.herokuapp.com`，客户端会用到这个域名
   
-### 客户端使用简要-windows
-> 替换所有的appname.herokuapp.com为heroku分配的项目域名，按需替换其它自定义参数  
+### 客户端使用简要
+> **务必替换所有的appname.herokuapp.com为heroku分配的项目域名，按需替换其它自定义参数**  
   
 > [更多来自热心网友PR的使用教程](https://github.com/mixool/heroku/tree/master/tutorial)
   
@@ -39,10 +39,10 @@
 C:\Users\Administrator\App\gost\gost-windows-amd64.exe -L :1080 -F=ss+wss://AEAD_CHACHA20_POLY1305:password@appname.herokuapp.com:443?path=/gostpath
 ```
   
-4. [Brook客户端下载](https://github.com/txthinking/brook/releases)，选择`Brook.exe`下载运行  
+4. [brook客户端下载](https://github.com/txthinking/brook/releases)，选择`Brook.exe`下载运行  
 配置`wsserver`内容`wss://appname.herokuapp.com:443/brookpath`以及密码`password`  
   
-5. [Cloudflare Workers](https://github.com/CCChieh/IBMYes#cloudflare-%E9%AB%98%E9%80%9F%E8%8A%82%E7%82%B9%E4%B8%AD%E8%BD%AC)  
+5. [cloudflare workers](https://github.com/CCChieh/IBMYes#cloudflare-%E9%AB%98%E9%80%9F%E8%8A%82%E7%82%B9%E4%B8%AD%E8%BD%AC)  
 <details>
 <summary>Example</summary>
 
