@@ -42,9 +42,8 @@ C:\Users\Administrator\App\gost\gost-windows-amd64.exe -L :1080 -F=ss+wss://AEAD
 4. [brook客户端下载](https://github.com/txthinking/brook/releases)，选择`Brook.exe`下载运行  
 配置`wsserver`内容`wss://appname.herokuapp.com:443/brookpath`以及密码`password`  
   
-5. [cloudflare workers](https://github.com/CCChieh/IBMYes#cloudflare-%E9%AB%98%E9%80%9F%E8%8A%82%E7%82%B9%E4%B8%AD%E8%BD%AC)  
 <details>
-<summary>Example</summary>
+<summary>cloudflare workers example</summary>
 
 ```js
 addEventListener(
