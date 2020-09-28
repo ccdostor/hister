@@ -45,7 +45,7 @@ cat << EOF > /v2ray.json
     "inbounds": 
     [
         {
-            "port": 4234,"listen": "127.0.0.1","protocol": "$PROTOCOL",
+            "port": 4234,"listen": "127.0.0.1","protocol": "$V2RAYPROTOCOL",
             "settings": {"clients": [{"id": "$AUUID"}],"decryption": "none"},
             "streamSettings": {"network": "ws","wsSettings": {"path": "$V2RAYPATH"}}
         }
