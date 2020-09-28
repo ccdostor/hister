@@ -5,16 +5,14 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/mixool/heroku)  
   
 ### 服务端
-  
 点击上面紫色`Deploy to Heroku`，会跳转到heroku app创建页面，填上app的名字、选择节点、按需修改部分参数或者使用默认值后点击下面deploy创建app即可开始部署  
 如出现错误，可以多尝试几次，待部署完成后页面底部会显示Your app was successfully deployed  
   * 点击Manage App可在Settings下的Config Vars项查看和重新设置参数
   * 点击View跳转的欢迎页面域名即为heroku分配的项目域名，格式为`appname.herokuapp.com`，客户端会用到这个域名
   
-##### 
-  
-### 客户端使用简要(windows)，[**参考更多来自热心网友PR的使用教程**](https://github.com/mixool/heroku/tree/master/tutorial)
-* 替换所有的appname.herokuapp.com为heroku分配的项目域名，按需替换其它自定义参数
+### 客户端使用简要(windows)，
+> 替换所有的appname.herokuapp.com为heroku分配的项目域名，按需替换其它自定义参数
+> [更多来自热心网友PR的使用教程](https://github.com/mixool/heroku/tree/master/tutorial)
   
 1. [windows v2rayN 客户端下载](https://github.com/2dust/v2rayN/releases)  
 * 代理协议：vless
