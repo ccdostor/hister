@@ -15,7 +15,7 @@
   
 > [更多来自热心网友PR的使用教程](https://github.com/mixool/heroku/tree/master/tutorial)
   
-1. [v2rayN 客户端](https://github.com/2dust/v2rayN/releases)  
+1. [v2ray](https://github.com/2dust/v2rayN/releases)  
 * 代理协议：vless
 * 地址：appname.herokuapp.com
 * 端口：443
@@ -26,7 +26,7 @@
 * 路径：/v2raypath
 * 底层传输安全：tls
   
-2. [shadowsocks-windows](https://github.com/shadowsocks/shadowsocks-windows/releases/)   
+2. [shadowsocks](https://github.com/shadowsocks/shadowsocks-windows/releases/)   
 * 服务器地址: appname.herokuapp.com
 * 端口: 443
 * 密码：password
