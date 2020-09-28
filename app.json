@@ -58,10 +58,10 @@
             "value": "/v2raypath"        
         },
         "AUUID": {
-            "description": "自定义用于V2RAY的UUID",
+            "description": "自定义用于V2RAY的UUID,在线生成https://www.uuidgenerator.net",
             "value": "8f91b6a0-e8ee-11ea-adc1-0242ac120002"
         },
-	"PROTOCOL": {
+	"V2RAYPROTOCOL": {
             "description": "v2ray代理协议，可选填vmess，默认是vless协议",
             "value": "vless"
         },
