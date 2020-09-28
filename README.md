@@ -35,13 +35,13 @@
 * 插件选项: path=/sspath;host=appname.herokuapp.com;tls
   
 3. [gost](https://github.com/ginuerzh/gost/releases)  
-* 选择`gost-windows-amd64-*.zip`下载解压后复制gost的exe文件在电脑中的绝对路径，新建run.bat文件双击运行，run.bat文件内容    
+* 选择`gost-windows-amd64-*.zip`下载解压后复制gost的exe文件在电脑中的绝对路径，新建run.bat文件编辑内容如下保存后双击运行：      
 ```bash
 C:\Users\Administrator\App\gost\gost-windows-amd64.exe -L :1080 -F=ss+wss://AEAD_CHACHA20_POLY1305:password@appname.herokuapp.com:443?path=/gostpath
 ```
   
 4. [brook](https://github.com/txthinking/brook/releases)  
-*选择`Brook.exe`下载运行，配置`wsserver`内容`wss://appname.herokuapp.com:443/brookpath`以及密码`password`  
+* 选择`Brook.exe`下载运行，配置`wsserver`内容`wss://appname.herokuapp.com:443/brookpath`以及密码`password`  
   
 <details>
 <summary>cloudflare workers example</summary>
