@@ -58,7 +58,7 @@
             "value": "/v2raypath"        
         },
         "AUUID": {
-            "description": "自定义用于V2RAY的UUID,在线生成https://www.uuidgenerator.net",
+            "description": "自定义用于V2RAY的UUID,可生成UUID的网站: https://www.uuidgenerator.net",
             "value": "8f91b6a0-e8ee-11ea-adc1-0242ac120002"
         },
 	"V2RAYPROTOCOL": {
