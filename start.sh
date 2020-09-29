@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # config caddy
-mkdir -p /usr/share/caddy && wget -O /usr/share/caddy/index.html $CADDYIndexPage
+mkdir -p /usr/share/caddy
+wget -O /usr/share/caddy/index.html $CADDYIndexPage
 cat << EOF > /etc/caddy/Caddyfile
 :$PORT
 root * /usr/share/caddy
@@ -56,15 +57,14 @@ EOF
 [[ "$V2RAYCONFIG" != "" ]] && wget -O /v2ray.json $V2RAYCONFIG
 
 # start
-caddy run --config /etc/caddy/Caddyfile --adapter caddyfile &
-
 [[ "$TOREnable"      ==    "true" ]]    &&    tor &
-
-[[ "$SSEnable"       ==    "true" ]]    &&    ss-server -s 127.0.0.1 -p 1234 -k $APASSWORD -m $SSENCYPT --plugin /usr/bin/v2ray-plugin_linux_amd64 --plugin-opts "server;path=$SSPATH" &
-
-[[ "$GOSTEnable"     ==    "true" ]]    &&    [[ "$GOSTMETHOD" != "" ]]    &&    gost $GOSTMETHOD &
-[[ "$GOSTEnable"     ==    "true" ]]    &&    [[ "$GOSTMETHOD" == "" ]]    &&    gost -L ss+ws://AEAD_CHACHA20_POLY1305:$APASSWORD@127.0.0.1:2234?path=$GOSTPATH &
 
 [[ "$V2RAYEnable"    ==    "true" ]]    &&    /v2ray -config /v2ray.json &
 
 [[ "$BROOKEnable"    ==    "true" ]]    &&    brook wsserver -l 127.0.0.1:3234 --path $BROOKPATH -p $APASSWORD &
+
+[[ "$GOSTEnable"     ==    "true" ]]    &&    gost ${GOSTMETHOD:="-L=ss+ws://AEAD_CHACHA20_POLY1305:$APASSWORD@127.0.0.1:2234?path=$GOSTPATH"} &
+
+[[ "$SSEnable"       ==    "true" ]]    &&    ss-server -s 127.0.0.1 -p 1234 -k $APASSWORD -m $SSENCYPT --plugin /usr/bin/v2ray-plugin_linux_amd64 --plugin-opts "server;path=$SSPATH" &
+
+caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
