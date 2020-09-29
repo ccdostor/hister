@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ### update
-echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && apk update
+echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && apk update && apk add --no-cache ca-certificates
 
 ### caddy
 apk add --no-cache caddy
