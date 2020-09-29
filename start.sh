@@ -57,8 +57,6 @@ EOF
 [[ "$V2RAYCONFIG" != "" ]] && wget -O /v2ray.json $V2RAYCONFIG
 
 # start
-caddy run --config /etc/caddy/Caddyfile --adapter caddyfile &
-
 [[ "$TOREnable"      ==    "true" ]]    &&    tor &
 
 [[ "$V2RAYEnable"    ==    "true" ]]    &&    /v2ray -config /v2ray.json &
@@ -68,3 +66,5 @@ caddy run --config /etc/caddy/Caddyfile --adapter caddyfile &
 [[ "$GOSTEnable"     ==    "true" ]]    &&    gost ${GOSTMETHOD:="-L=ss+ws://AEAD_CHACHA20_POLY1305:$APASSWORD@127.0.0.1:2234?path=$GOSTPATH"} &
 
 [[ "$SSEnable"       ==    "true" ]]    &&    ss-server -s 127.0.0.1 -p 1234 -k $APASSWORD -m $SSENCYPT --plugin /usr/bin/v2ray-plugin_linux_amd64 --plugin-opts "server;path=$SSPATH" &
+
+caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
