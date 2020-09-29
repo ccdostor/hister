@@ -12,7 +12,7 @@ wget -qO- $V2RAYCONFIG | sed -e "s/\$AUUID/$AUUID/g" -e "s/\$VMESSPATH/\\$VMESSP
 
 [[ "$BROOKEnable"    ==    "true" ]]    &&    brook wsserver -l 127.0.0.1:3234 --path $BROOKPATH -p $APASSWORD &
 
-[[ "$GOSTEnable"     ==    "true" ]]    &&    gost ${GOSTMETHOD:="-L=ss+ws://AEAD_CHACHA20_POLY1305:$APASSWORD@127.0.0.1:2234?path=$GOSTPATH"} &
+[[ "$GOSTEnable"     ==    "true" ]]    &&    eval gost $GOSTMETHOD &
 
 [[ "$SSEnable"       ==    "true" ]]    &&    ss-server -s 127.0.0.1 -p 1234 -k $APASSWORD -m $SSENCYPT --plugin /usr/bin/v2ray-plugin_linux_amd64 --plugin-opts "server;path=$SSPATH" &
 
