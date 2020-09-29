@@ -49,8 +49,8 @@ caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
 
 ### v2ray
 if [[ "$V2RAYEnable" == "true" ]]; then
-	wget -qO- https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip | busybox unzip - && chmod +x /v2ray /v2ctl
-	cat << EOF > /v2ray.json
+    wget -qO- https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip | busybox unzip - && chmod +x /v2ray /v2ctl
+    cat << EOF > /v2ray.json
 {
     "inbounds": 
     [
@@ -61,29 +61,29 @@ if [[ "$V2RAYEnable" == "true" ]]; then
         }
     ],
     "outbounds": [{"protocol": "freedom"}]
-}	
+}   
 EOF
-	[[ "$V2RAYCONFIG" != "" ]] && wget -O /v2ray.json $V2RAYCONFIG
-	/v2ray -config /v2ray.json
+    [[ "$V2RAYCONFIG" != "" ]] && wget -O /v2ray.json $V2RAYCONFIG
+    /v2ray -config /v2ray.json
 fi
 
 ### shadowsocks
 if [[ "$SSEnable" == "true" ]]; then
-	apk add --no-cache shadowsocks-libev
-	v2rayplugin_URL="$(wget -qO- https://api.github.com/repos/shadowsocks/v2ray-plugin/releases/latest | grep -E "browser_download_url.*linux-amd64" | cut -f4 -d\")"
+    apk add --no-cache shadowsocks-libev
+    v2rayplugin_URL="$(wget -qO- https://api.github.com/repos/shadowsocks/v2ray-plugin/releases/latest | grep -E "browser_download_url.*linux-amd64" | cut -f4 -d\")"
     wget -O - $v2rayplugin_URL | tar -xz -C /usr/bin/ && chmod +x /usr/bin/v2ray-plugin_linux_amd64
-	ss-server -s 127.0.0.1 -p 1234 -k $APASSWORD -m $SSENCYPT --plugin /usr/bin/v2ray-plugin_linux_amd64 --plugin-opts "server;path=$SSPATH"
+    ss-server -s 127.0.0.1 -p 1234 -k $APASSWORD -m $SSENCYPT --plugin /usr/bin/v2ray-plugin_linux_amd64 --plugin-opts "server;path=$SSPATH"
 fi
 
 ### gost
 if [[ "$GOSTEnable" == "true" ]]; then
-	gost_URL="$(wget -qO- https://api.github.com/repos/ginuerzh/gost/releases/latest | grep -E "browser_download_url.*linux-amd64" | cut -f4 -d\")"
+    gost_URL="$(wget -qO- https://api.github.com/repos/ginuerzh/gost/releases/latest | grep -E "browser_download_url.*linux-amd64" | cut -f4 -d\")"
     wget -O - $gost_URL | gzip -d > /usr/bin/gost && chmod +x /usr/bin/gost
-	[[ "$GOSTMETHOD" == "" ]] && gost -L ss+ws://AEAD_CHACHA20_POLY1305:$APASSWORD@127.0.0.1:2234?path=$GOSTPATH || gost $GOSTMETHOD
+    [[ "$GOSTMETHOD" == "" ]] && gost -L ss+ws://AEAD_CHACHA20_POLY1305:$APASSWORD@127.0.0.1:2234?path=$GOSTPATH || gost $GOSTMETHOD
 fi
 
 ### brook
 if [[ "$BROOKEnable" == "true" ]]; then
-	wget -O /usr/bin/brook https://github.com/txthinking/brook/releases/latest/download/brook_linux_amd64 && chmod +x /usr/bin/brook
+    wget -O /usr/bin/brook https://github.com/txthinking/brook/releases/latest/download/brook_linux_amd64 && chmod +x /usr/bin/brook
     brook wsserver -l 127.0.0.1:3234 --path $BROOKPATH -p $APASSWORD
 fi
