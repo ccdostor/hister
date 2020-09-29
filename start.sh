@@ -1,60 +1,14 @@
 #!/bin/sh
 
 # config caddy
-mkdir -p /usr/share/caddy
-wget -O /usr/share/caddy/index.html $CADDYIndexPage
-cat << EOF > /etc/caddy/Caddyfile
-:$PORT
-root * /usr/share/caddy
-file_server
-
-@websocket_ss {
-header Connection *Upgrade*
-header Upgrade    websocket
-path $SSPATH
-}
-reverse_proxy @websocket_ss 127.0.0.1:1234
-
-@websocket_gost {
-header Connection *Upgrade*
-header Upgrade    websocket
-path $GOSTPATH
-}
-reverse_proxy @websocket_gost 127.0.0.1:2234
-
-@websocket_brook {
-header Connection *Upgrade*
-header Upgrade    websocket
-path $BROOKPATH
-}
-reverse_proxy @websocket_brook 127.0.0.1:3234
-
-@websocket_v2ray {
-header Connection *Upgrade*
-header Upgrade    websocket
-path $V2RAYPATH
-}
-reverse_proxy @websocket_v2ray 127.0.0.1:4234
-EOF
-
-[[ "$CADDYCONFIG" != "" ]] && wget -O /etc/caddy/Caddyfile $CADDYCONFIG && sed -i "1c :$PORT" /etc/caddy/Caddyfile
+mkdir -p /etc/caddy/ /usr/share/caddy
+wget ${CADDYIndexPage:="https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html"} -O /usr/share/caddy/index.html 
+wget ${CADDYCONFIG:="https://raw.githubusercontent.com/Tarukas/heroku/master/etc/Caddyfile"} -O /etc/caddy/Caddyfile 
+sed -i -e "1c :$PORT" -e "s/\$SSPATH$/\\$SSPATH/" -e "s/\$GOSTPATH$/\\$GOSTPATH/" -e "s/\$BROOKPATH$/\\$BROOKPATH/" -e "s/\$V2RAYPATH$/\\$V2RAYPATH/" /etc/caddy/Caddyfile
 
 # config v2ray
-cat << EOF > /v2ray.json
-{
-    "inbounds": 
-    [
-        {
-            "port": 4234,"listen": "127.0.0.1","protocol": "$V2RAYPROTOCOL",
-            "settings": {"clients": [{"id": "$AUUID"}],"decryption": "none"},
-            "streamSettings": {"network": "ws","wsSettings": {"path": "$V2RAYPATH"}}
-        }
-    ],
-    "outbounds": [{"protocol": "freedom"}]
-}	
-EOF
-
-[[ "$V2RAYCONFIG" != "" ]] && wget -O /v2ray.json $V2RAYCONFIG
+wget -O /v2ray.json ${V2RAYCONFIG:="https://raw.githubusercontent.com/Tarukas/heroku/master/etc/v2ray.json"}
+sed -i -e "s/\$V2RAYPROTOCOL/$V2RAYPROTOCOL/" -e "s/\$AUUID/$AUUID/" -e "s/\$V2RAYPATH/\\$V2RAYPATH/" /v2ray.json
 
 # start
 [[ "$TOREnable"      ==    "true" ]]    &&    tor &
