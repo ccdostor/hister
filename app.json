@@ -17,8 +17,8 @@
             "value": "false"
         },
 	"CADDYIndexPage": {
-            "description": "自定义CADDY部署完成后点击View显示的页面内容",
-            "value": "https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html"
+            "description": "自定义CADDY部署完成后点击View显示的页面内容，不熟悉CADDY配置的请勿填写",
+            "value": ""
         },
 	"CADDYCONFIG": {
             "description": "自定义网络地址读取配置运行CADDY，不熟悉CADDY配置的请勿填写",
