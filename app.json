@@ -3,34 +3,31 @@
     "description": "heroku yes",
     "keywords": ["heroku yes"],
     "env": {
-	"AA": {
-            "description": "初阶用户只需填写App name后按需修改以下APASSWORD和AUUID两项后点击页面最后的Deploy app按钮即可完成部署",
-            "value": "使用自定义参数请务必充分理解其含义",
-	    "required": false
+        "AA": {
+            "description": "初阶用户只需填写App name后按需修改以下APASSWORD和AUUID两项后点击页面最后的Deploy app按钮即可开始部署",
+            "value": "如出现错误，请检查参数格式或多尝试几次。使用自定义参数请务必先充分理解其含义"
         },
         "APASSWORD": {
-            "description": "自定义用于SS和BROOK以及GOST的密码",
+            "description": "SS和BROOK以及GOST使用的密码",
             "value": "password"
         },
-	"TOREnable": {
-            "description": "是否启用TOR功能，默认关闭，如配置V2RAY从网络读取自定义的配置文件时提供TOR网络分流支持可设置为true打开",
+        "TOREnable": {
+            "description": "TOR开关，默认关闭，修改为true时候启用",
             "value": "false"
         },
-	"CADDYIndexPage": {
-            "description": "自定义CADDY部署完成后点击View显示的页面内容，不熟悉CADDY配置的请勿填写",
-            "value": "",
-	    "required": false
+        "CADDYIndexPage": {
+            "description": "自定义CADDY部署完成后点击View显示的页面内容，不熟悉CADDY配置的请勿修改",
+            "value": "https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html"
         },
-	"CADDYCONFIG": {
-            "description": "自定义网络地址读取配置运行CADDY，不熟悉CADDY配置的请勿填写",
-            "value": "",
-	    "required": false
+        "CADDYCONFIG": {
+            "description": "自定义网络地址读取配置运行CADDY，不熟悉CADDY配置的请勿修改",
+            "value": "https://raw.githubusercontent.com/mixool/heroku/master/etc/Caddyfile"
         },
-	"SSEnable": {
-            "description": "是否启用SS，默认启用，修改为其他值时关闭",
+        "SSEnable": {
+            "description": "SS开关，默认启用，修改为false时关闭",
             "value": "true"
         },
-	"SSENCYPT": {
+        "SSENCYPT": {
             "description": "SS加密方式",
             "value": "chacha20-ietf-poly1305"
         },
@@ -38,47 +35,46 @@
             "description": "SS路径",
             "value": "/sspath"
         },
-	"GOSTEnable": {
-            "description": "是否启用GOST，默认启用，修改为其他值时关闭",
+        "GOSTEnable": {
+            "description": "GOST开关，默认启用，修改为false时关闭",
             "value": "true"
         },
         "GOSTPATH": {
             "description": "GOST路径",
             "value": "/gostpath"
         },
-	"GOSTMETHOD": {
+        "GOSTMETHOD": {
             "description": "自定义GOST运行参数，不熟悉GOST配置的请勿填写",
             "value": "",
-	    "required": false
+            "required": false
         },
-	"BROOKEnable": {
-            "description": "是否启用BROOK，默认启用，修改为其他值时关闭",
+        "BROOKEnable": {
+            "description": "BROOK开关，默认启用，修改为false时关闭",
             "value": "true"
         },
         "BROOKPATH": {
             "description": "BROOK路径",
             "value": "/brookpath"
         },
-	"V2RAYEnable": {
-            "description": "是否启用V2RAY，默认启用，修改为其他值时关闭",
+        "V2RAYEnable": {
+            "description": "V2RAY开关，默认启用，修改为false时关闭",
             "value": "true"
         },
-        "V2RAYPATH": {
-            "description": "V2RAY路径",
-            "value": "/v2raypath"        
+        "VMESSPATH": {
+            "description": "V2RAY使用VMESS时的路径",
+            "value": "/vmesspath"
+        },
+        "VLESSPATH": {
+            "description": "V2RAY使用VLESS时的路径",
+            "value": "/vlesspath"
         },
         "AUUID": {
-            "description": "自定义用于V2RAY的UUID,可生成UUID的网站: https://www.uuidgenerator.net",
+            "description": "V2RAY使用的UUID,可生成UUID的网站: https://www.uuidgenerator.net",
             "value": "8f91b6a0-e8ee-11ea-adc1-0242ac120002"
         },
-	"V2RAYPROTOCOL": {
-            "description": "v2ray代理协议，可选填vmess，默认是vless协议",
-            "value": "vless"
-        },
         "V2RAYCONFIG": {
-            "description": "自定义网络地址读取配置运行V2RAY，不熟悉V2RAY配置的请勿填写",
-            "value": "",
-	    "required": false
+            "description": "自定义网络地址读取配置运行V2RAY，不熟悉V2RAY配置的请勿修改",
+            "value": "https://raw.githubusercontent.com/mixool/heroku/master/etc/v2ray.json"
         }
     },
     "website": "https://github.com/mixool/heroku",
