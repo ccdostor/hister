@@ -1,8 +1,11 @@
 #!/bin/sh
 
-# config caddy
-mkdir -p /usr/share/caddy
-wget -O /usr/share/caddy/index.html $CADDYIndexPage
+### update
+echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && apk update
+
+### caddy
+apk add --no-cache caddy
+mkdir -p /usr/share/caddy && wget -O /usr/share/caddy/index.html $CADDYIndexPage
 cat << EOF > /etc/caddy/Caddyfile
 :$PORT
 root * /usr/share/caddy
@@ -39,8 +42,15 @@ EOF
 
 [[ "$CADDYCONFIG" != "" ]] && wget -O /etc/caddy/Caddyfile $CADDYCONFIG && sed -i "1c :$PORT" /etc/caddy/Caddyfile
 
-# config v2ray
-cat << EOF > /v2ray.json
+caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
+
+### tor
+[[ "$TOREnable" == "true" ]] && apk add --no-cache tor && tor
+
+### v2ray
+if [[ "$V2RAYEnable" == "true" ]]; then
+	wget -qO- https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip | busybox unzip - && chmod +x /v2ray /v2ctl
+	cat << EOF > /v2ray.json
 {
     "inbounds": 
     [
@@ -53,19 +63,27 @@ cat << EOF > /v2ray.json
     "outbounds": [{"protocol": "freedom"}]
 }	
 EOF
+	[[ "$V2RAYCONFIG" != "" ]] && wget -O /v2ray.json $V2RAYCONFIG
+	/v2ray -config /v2ray.json
+fi
 
-[[ "$V2RAYCONFIG" != "" ]] && wget -O /v2ray.json $V2RAYCONFIG
+### shadowsocks
+if [[ "$SSEnable" == "true" ]]; then
+	apk add --no-cache shadowsocks-libev
+	v2rayplugin_URL="$(wget -qO- https://api.github.com/repos/shadowsocks/v2ray-plugin/releases/latest | grep -E "browser_download_url.*linux-amd64" | cut -f4 -d\")"
+    wget -O - $v2rayplugin_URL | tar -xz -C /usr/bin/ && chmod +x /usr/bin/v2ray-plugin_linux_amd64
+	ss-server -s 127.0.0.1 -p 1234 -k $APASSWORD -m $SSENCYPT --plugin /usr/bin/v2ray-plugin_linux_amd64 --plugin-opts "server;path=$SSPATH"
+fi
 
-# start
-caddy run --config /etc/caddy/Caddyfile --adapter caddyfile &
+### gost
+if [[ "$GOSTEnable" == "true" ]]; then
+	gost_URL="$(wget -qO- https://api.github.com/repos/ginuerzh/gost/releases/latest | grep -E "browser_download_url.*linux-amd64" | cut -f4 -d\")"
+    wget -O - $gost_URL | gzip -d > /usr/bin/gost && chmod +x /usr/bin/gost
+	[[ "$GOSTMETHOD" == "" ]] && gost -L ss+ws://AEAD_CHACHA20_POLY1305:$APASSWORD@127.0.0.1:2234?path=$GOSTPATH || gost $GOSTMETHOD
+fi
 
-[[ "$TOREnable"      ==    "true" ]]    &&    tor &
-
-[[ "$SSEnable"       ==    "true" ]]    &&    ss-server -s 127.0.0.1 -p 1234 -k $APASSWORD -m $SSENCYPT --plugin /usr/bin/v2ray-plugin_linux_amd64 --plugin-opts "server;path=$SSPATH" &
-
-[[ "$GOSTEnable"     ==    "true" ]]    &&    [[ "$GOSTMETHOD" != "" ]]    &&    gost $GOSTMETHOD &
-[[ "$GOSTEnable"     ==    "true" ]]    &&    [[ "$GOSTMETHOD" == "" ]]    &&    gost -L ss+ws://AEAD_CHACHA20_POLY1305:$APASSWORD@127.0.0.1:2234?path=$GOSTPATH &
-
-[[ "$V2RAYEnable"    ==    "true" ]]    &&    /v2ray -config /v2ray.json
-
-[[ "$BROOKEnable"    ==    "true" ]]    &&    brook wsserver -l 127.0.0.1:3234 --path $BROOKPATH -p $APASSWORD &
+### brook
+if [[ "$BROOKEnable" == "true" ]]; then
+	wget -O /usr/bin/brook https://github.com/txthinking/brook/releases/latest/download/brook_linux_amd64 && chmod +x /usr/bin/brook
+    brook wsserver -l 127.0.0.1:3234 --path $BROOKPATH -p $APASSWORD
+fi
