@@ -2,7 +2,7 @@
   
 * 本项目把v2ray，shadowsocks，gost，brook四种代理工具同时部署到heroku空间，方便客户端各取所需！  
   
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/Tarukas/heroku)  
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/mixool/heroku)  
   
 ### 服务端
 点击上面紫色`Deploy to Heroku`，会跳转到heroku app创建页面，填上app的名字、选择节点、按需修改部分参数或者使用默认值后点击下面deploy创建app即可开始部署  
