@@ -3,11 +3,11 @@
 # config caddy
 mkdir -p /etc/caddy/ /usr/share/caddy
 wget ${CADDYIndexPage:="https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html"} -O /usr/share/caddy/index.html 
-wget ${CADDYCONFIG:="https://raw.githubusercontent.com/Tarukas/heroku/master/etc/Caddyfile"} -O /etc/caddy/Caddyfile 
+wget ${CADDYCONFIG:="https://raw.githubusercontent.com/mixool/heroku/master/etc/Caddyfile"} -O /etc/caddy/Caddyfile 
 sed -i -e "1c :$PORT" -e "s/\$SSPATH$/\\$SSPATH/" -e "s/\$GOSTPATH$/\\$GOSTPATH/" -e "s/\$BROOKPATH$/\\$BROOKPATH/" -e "s/\$V2RAYPATH$/\\$V2RAYPATH/" /etc/caddy/Caddyfile
 
 # config v2ray
-wget -O /v2ray.json ${V2RAYCONFIG:="https://raw.githubusercontent.com/Tarukas/heroku/master/etc/v2ray.json"}
+wget -O /v2ray.json ${V2RAYCONFIG:="https://raw.githubusercontent.com/mixool/heroku/master/etc/v2ray.json"}
 sed -i -e "s/\$V2RAYPROTOCOL/$V2RAYPROTOCOL/" -e "s/\$AUUID/$AUUID/" -e "s/\$V2RAYPATH/\\$V2RAYPATH/" /v2ray.json
 
 # start
