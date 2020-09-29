@@ -45,8 +45,7 @@
         },
         "GOSTMETHOD": {
             "description": "自定义GOST运行参数，不熟悉GOST配置的请勿修改",
-            "value": "-L=ss+ws://AEAD_CHACHA20_POLY1305:$APASSWORD@127.0.0.1:2234?path=$GOSTPATH",
-            "required": false
+            "value": "-L=ss+ws://AEAD_CHACHA20_POLY1305:$APASSWORD@127.0.0.1:2234?path=$GOSTPATH"
         },
         "BROOKEnable": {
             "description": "BROOK开关，默认启用，修改为false时关闭",

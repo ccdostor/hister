@@ -16,14 +16,14 @@
 > [更多来自热心网友PR的使用教程](https://github.com/mixool/heroku/tree/master/tutorial)
   
 1. [v2ray](https://github.com/2dust/v2rayN/releases)  
-* 代理协议：vless
+* 代理协议：vless 或 vmess
 * 地址：appname.herokuapp.com
 * 端口：443
 * 默认UUID：8f91b6a0-e8ee-11ea-adc1-0242ac120002
 * 加密：none
 * 传输协议：ws
 * 伪装类型：none
-* 路径：/vlesspath
+* 路径：/vlesspath // 默认vless使用/vlesspath，vmess使用/vmesspath
 * 底层传输安全：tls
   
 2. [shadowsocks](https://github.com/shadowsocks/shadowsocks-windows/releases/)   
