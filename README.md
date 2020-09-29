@@ -23,7 +23,7 @@
 * 加密：none
 * 传输协议：ws
 * 伪装类型：none
-* 路径：/v2raypath
+* 路径：/vlesspath
 * 底层传输安全：tls
   
 2. [shadowsocks](https://github.com/shadowsocks/shadowsocks-windows/releases/)   
