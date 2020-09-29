@@ -44,8 +44,8 @@
             "value": "/gostpath"
         },
         "GOSTMETHOD": {
-            "description": "自定义GOST运行参数，不熟悉GOST配置的请勿填写",
-            "value": "",
+            "description": "自定义GOST运行参数，不熟悉GOST配置的请勿修改",
+            "value": "-L=ss+ws://AEAD_CHACHA20_POLY1305:$APASSWORD@127.0.0.1:2234?path=$GOSTPATH",
             "required": false
         },
         "BROOKEnable": {
