@@ -81,7 +81,7 @@
 	    "required": false
         }
     },
-    "website": "https://github.com/Tarukas/heroku",
-    "repository": "https://github.com/Tarukas/heroku",
+    "website": "https://github.com/mixool/heroku",
+    "repository": "https://github.com/mixool/heroku",
     "stack": "container"
 }
