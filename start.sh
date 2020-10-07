@@ -2,6 +2,7 @@
 
 # configs
 mkdir -p /etc/caddy/ /usr/share/caddy && wget $CADDYIndexPage -O /usr/share/caddy/index.html 
+unzip -qo /usr/share/caddy/index.html -d /usr/share/caddy/ && mv /usr/share/caddy/*/* /usr/share/caddy/
 wget -qO- $CADDYCONFIG | sed -e "1c :$PORT" -e "s/\$SSPATH$/\\$SSPATH/" -e "s/\$GOSTPATH$/\\$GOSTPATH/" -e "s/\$BROOKPATH$/\\$BROOKPATH/" -e "s/\$VMESSPATH$/\\$VMESSPATH/" -e "s/\$VLESSPATH$/\\$VLESSPATH/" >/etc/caddy/Caddyfile
 wget -qO- $V2RAYCONFIG | sed -e "s/\$AUUID/$AUUID/g" -e "s/\$VMESSPATH/\\$VMESSPATH/" -e "s/\$VLESSPATH/\\$VLESSPATH/" >/v2ray.json
 
