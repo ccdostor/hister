@@ -1,6 +1,6 @@
 > 变量CADDYIndexPage用于CADDY部署完成后点击View显示的页面内容  
   
-选择你中意的链接地址作为变量CADDYIndexPage变量值，欢迎PR，一些推荐：  
+> 选择你中意的链接地址复制后作为变量CADDYIndexPage变量值，欢迎PR，一些推荐：  
   
 * [欢迎使用caddy页面](https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html)  
   
