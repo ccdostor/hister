@@ -16,7 +16,7 @@
             "value": "false"
         },
         "CADDYIndexPage": {
-            "description": "自定义CADDY部署完成后点击View显示的页面内容，不熟悉CADDY配置的请勿修改",
+            "description": "自定义CADDY部署完成后点击View的显示页面，参考：https://github.com/mixool/heroku/blob/master/etc/CADDYIndexPage.md",
             "value": "https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html"
         },
         "CADDYCONFIG": {
