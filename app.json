@@ -23,6 +23,14 @@
             "description": "自定义网络地址读取配置运行CADDY，不熟悉CADDY配置的请勿修改",
             "value": "https://raw.githubusercontent.com/mixool/heroku/master/etc/Caddyfile"
         },
+		"ROBOTS": {
+            "description": "ROBOTS爬虫规则开关，默认开启，修改为false时候关闭"
+            "value": "true"
+        },
+		"ROBOTSCONFIG": {
+            "description": "自定义ROBOTS爬虫配置，默认配置禁止所有爬虫"
+            "value": "https://raw.githubusercontent.com/mixool/heroku/master/etc/robots.txt"
+        },
         "SSEnable": {
             "description": "SS开关，默认启用，修改为false时关闭",
             "value": "true"
