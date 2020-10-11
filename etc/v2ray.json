@@ -6,11 +6,26 @@
             "settings": {"clients": [{"id": "$AUUID"}]},
             "streamSettings": {"network": "ws","wsSettings": {"path": "$VMESSPATH"}}
         },
-	{
+        {
             "port": 5234,"listen": "127.0.0.1","protocol": "vless",
             "settings": {"clients": [{"id": "$AUUID"}],"decryption": "none"},
             "streamSettings": {"network": "ws","wsSettings": {"path": "$VLESSPATH"}}
         }
     ],
-    "outbounds": [{"protocol": "freedom"}]
+    
+    "outbounds": 
+    [
+        {"protocol": "freedom","tag": "direct","settings": {}},
+        {"protocol": "socks","tag": "sockstor","settings": {"servers": [{"address": "127.0.0.1","port": 9050}]}},
+        {"protocol": "blackhole","tag": "blocked","settings": {}}
+    ],
+    
+    "routing": 
+    {
+        "rules": 
+        [
+            {"type": "field","outboundTag": "blocked","domain": ["geosite:category-ads-all"]},
+            {"type": "field","outboundTag": "sockstor","domain": ["geosite:tor"]}
+        ]
+    }
 }
