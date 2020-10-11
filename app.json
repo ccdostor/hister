@@ -16,12 +16,12 @@
             "value": "false"
         },
         "CADDYIndexPage": {
-            "description": "自定义CADDY部署完成后点击View的显示页面，参考：https://github.com/mixool/heroku/blob/master/etc/CADDYIndexPage.md",
+            "description": "自定义CADDY部署完成后点击View的显示页面，参考：https://github.com/mixool/kuhero/blob/master/etc/CADDYIndexPage.md",
             "value": "https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html"
         },
         "CADDYCONFIG": {
             "description": "自定义网络地址读取配置运行CADDY，不熟悉CADDY配置的请勿修改",
-            "value": "https://raw.githubusercontent.com/mixool/heroku/master/etc/Caddyfile"
+            "value": "https://raw.githubusercontent.com/mixool/kuhero/master/etc/Caddyfile"
         },
         "ROBOTS": {
             "description": "ROBOTS爬虫规则开关，默认开启，修改为false时候关闭",
@@ -29,7 +29,7 @@
         },
         "ROBOTSCONFIG": {
             "description": "自定义ROBOTS爬虫配置，默认配置禁止所有爬虫",
-            "value": "https://raw.githubusercontent.com/mixool/heroku/master/etc/robots.txt"
+            "value": "https://raw.githubusercontent.com/mixool/kuhero/master/etc/robots.txt"
         },
         "SSEnable": {
             "description": "SS开关，默认启用，修改为false时关闭",
@@ -81,10 +81,10 @@
         },
         "V2RAYCONFIG": {
             "description": "自定义网络地址读取配置运行V2RAY，不熟悉V2RAY配置的请勿修改",
-            "value": "https://raw.githubusercontent.com/mixool/heroku/master/etc/v2ray.json"
+            "value": "https://raw.githubusercontent.com/mixool/kuhero/master/etc/v2ray.json"
         }
     },
-    "website": "https://github.com/mixool/heroku",
-    "repository": "https://github.com/mixool/heroku",
+    "website": "https://github.com/mixool/kuhero",
+    "repository": "https://github.com/mixool/kuhero",
     "stack": "container"
 }
