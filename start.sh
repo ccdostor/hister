@@ -5,7 +5,7 @@ mkdir -p /etc/caddy/ /usr/share/caddy && wget $CADDYIndexPage -O /usr/share/cadd
 unzip -qo /usr/share/caddy/index.html -d /usr/share/caddy/ && mv /usr/share/caddy/*/* /usr/share/caddy/
 [[ "$ROBOTS" == "true" ]] && wget -qO- $ROBOTSCONFIG >/usr/share/caddy/robots.txt
 wget -qO- $CADDYCONFIG | sed -e "1c :$PORT" -e "s/\$SSPATH$/\\$SSPATH/" -e "s/\$GOSTPATH$/\\$GOSTPATH/" -e "s/\$BROOKPATH$/\\$BROOKPATH/" -e "s/\$VMESSPATH$/\\$VMESSPATH/" -e "s/\$VLESSPATH$/\\$VLESSPATH/" -e "s/\$VRAYSSPATH$/\\$VRAYSSPATH/" >/etc/caddy/Caddyfile
-wget -qO- $V2RAYCONFIG | sed -e "s/\$AUUID/$AUUID/g" -e "s/\$VMESSPATH/\\$VMESSPATH/" -e "s/\$VLESSPATH/\\$VLESSPATH/" -e "s/\$VRAYSSPATH$/\\$VRAYSSPATH/" -e "s/\$SSENCYPT/$SSENCYPT/" -e "s/\$APASSWORD/$APASSWORD/" >/v2ray.json
+wget -qO- $V2RAYCONFIG | sed -e "s/\$AUUID/$AUUID/g" -e "s/\$VMESSPATH/\\$VMESSPATH/" -e "s/\$VLESSPATH/\\$VLESSPATH/" -e "s/\$VRAYSSPATH/\\$VRAYSSPATH/" -e "s/\$SSENCYPT/$SSENCYPT/" -e "s/\$APASSWORD/$APASSWORD/" >/v2ray.json
 
 # start
 [[ "$TOREnable"      ==    "true" ]]    &&    tor &
