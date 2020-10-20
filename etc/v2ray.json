@@ -15,7 +15,7 @@
             "port": 6234,"listen": "127.0.0.1","protocol": "dokodemo-door",
             "tag": "door",
             "settings": {"address": "v1.mux.cool","followRedirect": false,"network": "tcp, udp"},
-			"sniffing": {"enabled": true,"destOverride": ["http","tls"]},
+            "sniffing": {"enabled": true,"destOverride": ["http","tls"]},
             "streamSettings": {"network": "ws","wsSettings": {"path": "$VRAYSSPATH"}}
         },
         {
