@@ -10,24 +10,12 @@
             "port": 5234,"listen": "127.0.0.1","protocol": "vless",
             "settings": {"clients": [{"id": "$AUUID"}],"decryption": "none"},
             "streamSettings": {"network": "ws","wsSettings": {"path": "$VLESSPATH"}}
-        },
-        {
-            "port": 6234,"listen": "127.0.0.1","protocol": "dokodemo-door",
-            "tag": "door",
-            "settings": {"address": "v1.mux.cool","followRedirect": false,"network": "tcp, udp"},
-            "sniffing": {"enabled": true,"destOverride": ["http","tls"]},
-            "streamSettings": {"network": "ws","wsSettings": {"path": "$VRAYSSPATH"}}
-        },
-        {
-            "port": 7234,"listen": "127.0.0.1","protocol": "shadowsocks",
-            "settings": {"method": "$SSENCYPT","password": "$APASSWORD","network": "tcp,udp"}
         }
     ],
     
     "outbounds": 
     [
         {"protocol": "freedom","tag": "direct","settings": {}},
-        {"protocol": "freedom","tag": "dokodemo-shadowsocks","settings": {"redirect": "127.0.0.1:7234"}},
         {"protocol": "socks","tag": "sockstor","settings": {"servers": [{"address": "127.0.0.1","port": 9050}]}},
         {"protocol": "blackhole","tag": "blocked","settings": {}}
     ],
@@ -36,7 +24,6 @@
     {
         "rules": 
         [
-            {"type": "field","inboundTag": "door","outboundTag": "dokodemo-shadowsocks"},
             {"type": "field","outboundTag": "blocked","domain": ["geosite:category-ads-all"]},
             {"type": "field","outboundTag": "sockstor","domain": ["geosite:tor"]}
         ]

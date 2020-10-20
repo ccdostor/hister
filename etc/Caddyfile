@@ -47,10 +47,3 @@ header Upgrade    websocket
 path $VLESSPATH
 }
 reverse_proxy @websocket_v2ray_vless 127.0.0.1:5234
-
-@websocket_v2ray_shadowsocks {
-header Connection *Upgrade*
-header Upgrade    websocket
-path $VRAYSSPATH
-}
-reverse_proxy @websocket_v2ray_shadowsocks 127.0.0.1:6234
