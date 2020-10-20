@@ -76,7 +76,7 @@
             "value": "/vlesspath"
         },
         "VRAYSSENCYPT": {
-            "description": "V2RAY使用SHADOWSOCKS时的加密方式",
+            "description": "V2RAY使用SHADOWSOCKS时的加密方式(目前修改配置为其它加密方式会无法链接，原因未知)",
             "value": "chacha20-ietf-poly1305"
         },
         "VRAYSSPATH": {
