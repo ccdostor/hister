@@ -31,7 +31,7 @@
 * 底层传输安全：tls
 ```
 </details>
-
+  
 <details>
 <summary>trojan-go</summary>
 
@@ -67,15 +67,26 @@
 * 插件程序：v2ray-plugin_windows_amd64.exe  //需将插件https://github.com/shadowsocks/v2ray-plugin/releases下载解压后放至shadowsocks同目录
 * 插件选项: tls;host=appname.herokuapp.com;path=/sspath
 ```
+</details>
   
-3. [gost](https://github.com/ginuerzh/gost/releases)  
-* 选择`gost-windows-amd64-*.zip`下载解压后复制gost的exe文件在电脑中的绝对路径，新建run.bat文件编辑内容如下保存后双击运行：      
+<details>
+<summary>gost</summary>
+
 ```bash
+* 客户端下载：https://github.com/ginuerzh/gost/releases
+* 选择`gost-windows-amd64-*.zip`下载解压后复制gost的exe文件在电脑中的绝对路径，新建run.bat文件编辑内容如下保存后双击运行：     
 C:\Users\Administrator\App\gost\gost-windows-amd64.exe -L :1080 -F=ss+wss://AEAD_CHACHA20_POLY1305:password@appname.herokuapp.com:443?path=/gostpath
 ```
+</details>
   
-4. [brook](https://github.com/txthinking/brook/releases)  
-* 选择`Brook.exe`下载运行，配置`wsserver`内容`wss://appname.herokuapp.com:443/brookpath`以及密码`password`  
+<details>
+<summary>brook</summary>
+
+```bash
+* 客户端下载：https://github.com/txthinking/brook/releases
+* 选择Brook.exe下载运行，配置wsserver内容wss://appname.herokuapp.com:443/brookpath以及密码password
+```
+</details>
   
 <details>
 <summary>cloudflare workers example</summary>
