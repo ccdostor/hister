@@ -1,6 +1,6 @@
 > 提醒： 滥用可能导致账户被BAN！！！[Telegram讨论群](https://t.me/starts_sh_group)  
   
-* 本项目可选择性的把v2ray，shadowsocks，gost，brook四种代理工具部署到heroku空间，方便客户端各取所需！  
+* 本项目可选择性的把v2ray(trojan-go)，shadowsocks，gost，brook等代理工具部署到heroku空间，方便客户端各取所需！  
   
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/mixool/kuhero)  
   
@@ -25,6 +25,29 @@
 * 伪装类型：none
 * 路径：/vlesspath // 默认vless使用/vlesspath，vmess使用/vmesspath
 * 底层传输安全：tls
+
+PS： 同时支持[trojan-go](https://github.com/p4gefau1t/trojan-go/releases)
+<details>
+<summary>trojan-go client config example</summary>
+
+```js
+{
+    "run_type": "client",
+    "local_addr": "127.0.0.1",
+    "local_port": 1080,
+    "remote_addr": "appname.herokuapp.com",
+    "remote_port": 443,
+    "password": [
+        "password"
+    ],
+    "websocket": {
+        "enabled": true,
+        "path": "/trojanpath",
+		"host": "appname.herokuapp.com"
+    }
+}
+```
+</details>
   
 2. [shadowsocks](https://github.com/shadowsocks/shadowsocks-windows/releases/)   
 * 服务器地址: appname.herokuapp.com
