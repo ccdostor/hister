@@ -74,7 +74,7 @@
 
 ```bash
 * 客户端下载：https://github.com/ginuerzh/gost/releases
-* 选择`gost-windows-amd64-*.zip`下载解压后复制gost的exe文件在电脑中的绝对路径，新建run.bat文件编辑内容如下保存后双击运行：     
+* 选择gost-windows-amd64-*.zip下载解压后复制gost的exe文件在电脑中的绝对路径，新建run.bat文件编辑内容如下保存后双击运行：     
 C:\Users\Administrator\App\gost\gost-windows-amd64.exe -L :1080 -F=ss+wss://AEAD_CHACHA20_POLY1305:password@appname.herokuapp.com:443?path=/gostpath
 ```
 </details>
