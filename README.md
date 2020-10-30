@@ -13,8 +13,6 @@
 ### 客户端
 > **务必替换所有的appname.herokuapp.com为heroku分配的项目域名，按需替换其它自定义参数**  
   
-> [更多来自热心网友PR的使用教程](https://github.com/mixool/kuhero/tree/master/tutorial)
-  
 <details>
 <summary>v2ray</summary>
 
@@ -114,3 +112,5 @@ addEventListener(
 )
 ```
 </details>
+  
+> [更多来自热心网友PR的使用教程](https://github.com/mixool/kuhero/tree/master/tutorial)
