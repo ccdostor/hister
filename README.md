@@ -35,8 +35,8 @@
 <details>
 <summary>trojan-go</summary>
 
-```js
-//客户端下载: https://github.com/p4gefau1t/trojan-go/releases
+```bash
+* 客户端下载: https://github.com/p4gefau1t/trojan-go/releases
 {
     "run_type": "client",
     "local_addr": "127.0.0.1",
@@ -55,13 +55,18 @@
 ```
 </details>
   
-2. [shadowsocks](https://github.com/shadowsocks/shadowsocks-windows/releases/)   
+<details>
+<summary>shadowsocks</summary>
+
+```bash
+* 客户端下载：https://github.com/shadowsocks/shadowsocks-windows/releases/
 * 服务器地址: appname.herokuapp.com
 * 端口: 443
 * 密码：password
 * 加密：chacha20-ietf-poly1305
-* 插件程序：D:\APP\v2ray-plugin_windows_amd64.exe  //此处要填[v2ray-plugin插件](https://github.com/shadowsocks/v2ray-plugin/releases)下载解压后在电脑上的绝对路径
+* 插件程序：v2ray-plugin_windows_amd64.exe  //需将插件https://github.com/shadowsocks/v2ray-plugin/releases下载解压后放至shadowsocks同目录
 * 插件选项: tls;host=appname.herokuapp.com;path=/sspath
+```
   
 3. [gost](https://github.com/ginuerzh/gost/releases)  
 * 选择`gost-windows-amd64-*.zip`下载解压后复制gost的exe文件在电脑中的绝对路径，新建run.bat文件编辑内容如下保存后双击运行：      
