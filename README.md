@@ -16,7 +16,11 @@
 > [更多来自热心网友PR的使用教程](https://github.com/mixool/kuhero/tree/master/tutorial)
   
 1. [v2ray](https://github.com/2dust/v2rayN/releases)  
-* 代理协议：vless 或 vmess (同时支持vless|vmess|trojan-go)
+<details>
+<summary>v2ray client example</summary>
+
+```bash
+* 代理协议：vless 或 vmess
 * 地址：appname.herokuapp.com
 * 端口：443
 * 默认UUID：8f91b6a0-e8ee-11ea-adc1-0242ac120002
@@ -25,6 +29,8 @@
 * 伪装类型：none
 * 路径：/vlesspath // 默认vless使用/vlesspath，vmess使用/vmesspath
 * 底层传输安全：tls
+```
+</details>
 
 <details>
 <summary>trojan-go client config example</summary>
