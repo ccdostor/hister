@@ -19,6 +19,7 @@
 <summary>v2ray</summary>
 
 ```bash
+* 客户端下载：https://github.com/v2fly/v2ray-core/releases
 * 代理协议：vless 或 vmess
 * 地址：appname.herokuapp.com
 * 端口：443
@@ -31,10 +32,11 @@
 ```
 </details>
 
-* [trojan-go](https://github.com/p4gefau1t/trojan-go/releases)
 <details>
+<summary>trojan-go</summary>
 
 ```js
+//客户端下载: https://github.com/p4gefau1t/trojan-go/releases
 {
     "run_type": "client",
     "local_addr": "127.0.0.1",
