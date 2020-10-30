@@ -1,6 +1,6 @@
 > 提醒： 滥用可能导致账户被BAN！！！[Telegram讨论群](https://t.me/starts_sh_group)  
   
-* 本项目可在heroku上选择性的部署v2ray(trojan-go)，shadowsocks，gost，brook等工具，支持多种协议，方便客户端各取所需！  
+* 本项目可在heroku上选择性的部署v2ray(trojan-go)，shadowsocks，gost，brook等，方便客户端各取所需！  
   
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/mixool/kuhero)  
   
