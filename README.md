@@ -15,10 +15,8 @@
   
 > [更多来自热心网友PR的使用教程](https://github.com/mixool/kuhero/tree/master/tutorial)
   
-1.  
+* [v2ray](https://github.com/2dust/v2rayN/releases)
 <details>
-<summary>[v2ray](https://github.com/2dust/v2rayN/releases) </summary>
-
 ```bash
 * 代理协议：vless 或 vmess
 * 地址：appname.herokuapp.com
@@ -32,9 +30,8 @@
 ```
 </details>
 
+* [trojan-go](https://github.com/p4gefau1t/trojan-go/releases)
 <details>
-<summary>trojan-go client config example</summary>
-
 ```js
 {
     "run_type": "client",
