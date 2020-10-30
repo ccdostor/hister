@@ -15,9 +15,9 @@
   
 > [更多来自热心网友PR的使用教程](https://github.com/mixool/kuhero/tree/master/tutorial)
   
-1. [v2ray](https://github.com/2dust/v2rayN/releases)  
+1.  
 <details>
-<summary>v2ray client example</summary>
+<summary>[v2ray](https://github.com/2dust/v2rayN/releases) </summary>
 
 ```bash
 * 代理协议：vless 或 vmess
