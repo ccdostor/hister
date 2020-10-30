@@ -1,6 +1,6 @@
 > 提醒： 滥用可能导致账户被BAN！！！[Telegram讨论群](https://t.me/starts_sh_group)  
   
-* 本项目可选择性的把v2ray(trojan-go)，shadowsocks，gost，brook等代理工具部署到heroku空间，方便客户端各取所需！  
+* 本项目可在heroku上选择性的部署v2ray(trojan-go)，shadowsocks，gost，brook等工具，支持多种协议，方便客户端各取所需！  
   
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/mixool/kuhero)  
   
@@ -16,7 +16,7 @@
 > [更多来自热心网友PR的使用教程](https://github.com/mixool/kuhero/tree/master/tutorial)
   
 1. [v2ray](https://github.com/2dust/v2rayN/releases)  
-* 代理协议：vless 或 vmess (同时支持)
+* 代理协议：vless 或 vmess (同时支持vless|vmess|trojan-go)
 * 地址：appname.herokuapp.com
 * 端口：443
 * 默认UUID：8f91b6a0-e8ee-11ea-adc1-0242ac120002
@@ -26,7 +26,6 @@
 * 路径：/vlesspath // 默认vless使用/vlesspath，vmess使用/vmesspath
 * 底层传输安全：tls
 
-PS： 同时支持[trojan-go](https://github.com/p4gefau1t/trojan-go/releases)
 <details>
 <summary>trojan-go client config example</summary>
 
@@ -43,7 +42,7 @@ PS： 同时支持[trojan-go](https://github.com/p4gefau1t/trojan-go/releases)
     "websocket": {
         "enabled": true,
         "path": "/trojanpath",
-		"host": "appname.herokuapp.com"
+        "host": "appname.herokuapp.com"
     }
 }
 ```
