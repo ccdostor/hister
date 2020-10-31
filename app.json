@@ -58,7 +58,7 @@
         "TOREnable": {
             "description": "TOR开关，默认关闭，修改为true时候启用",
             "value": "false"
-        },
+        }
     },
     "website": "https://github.com/mixool/kuhero",
     "repository": "https://github.com/mixool/kuhero",
