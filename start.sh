@@ -16,6 +16,6 @@ wget -qO- $CONFIGV2RAY | sed "s/\$AUUID/$AUUID/g" >/v2ray.json
 
 [[ "$EnableGOST"     ==    "true" ]]    &&    eval gost $ParameterGOSTMETHOD &
 
-[[ "$EnableSS"       ==    "true" ]]    &&    ss-server -s 127.0.0.1 -p 1234 -k $AUUID -m $ParameterSSENCYPT --plugin /usr/bin/v2ray-plugin_linux_amd64 --plugin-opts "server;path=$AUUID-ss" &
+[[ "$EnableSS"       ==    "true" ]]    &&    ss-server -s 127.0.0.1 -p 1234 -k $AUUID -m $ParameterSSENCYPT --plugin /usr/bin/v2ray-plugin_linux_amd64 --plugin-opts "server;path=/$AUUID-ss" &
 
 caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
