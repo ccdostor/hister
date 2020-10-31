@@ -8,7 +8,8 @@
 点击上面紫色`Deploy to Heroku`，会跳转到heroku app创建页面，填上app的名字、选择节点、按需修改部分参数和AUUID后点击下面deploy创建app即可开始部署  
 如出现错误，可以多尝试几次，待部署完成后页面底部会显示Your app was successfully deployed  
   * 点击Manage App可在Settings下的Config Vars项**查看和重新设置参数**  
-  * 点击View跳转[欢迎页面](https://github.com/mixool/kuhero/blob/master/etc/CADDYIndexPage.md)域名即为heroku分配的项目域名，格式为`appname.herokuapp.com`，客户端会用到此域名
+  * 点击View跳转[欢迎页面](https://github.com/mixool/kuhero/blob/master/etc/CADDYIndexPage.md)域名即为heroku分配的项目域名，格式为`appname.herokuapp.com`，客户端会用到此域名  
+  * 默认协议密码为$UUID，WS路径为$UUID-[vless|vmess|trojan|ss|gost|brook]格式
   
 ### 客户端
 * **务必替换所有的appname.herokuapp.com为heroku分配的项目域名**  
