@@ -4,18 +4,18 @@
 mkdir -p /etc/caddy/ /usr/share/caddy && wget $CADDYIndexPage -O /usr/share/caddy/index.html 
 unzip -qo /usr/share/caddy/index.html -d /usr/share/caddy/ && mv /usr/share/caddy/*/* /usr/share/caddy/
 [[ "$ROBOTS" == "true" ]] && wget -qO- $ROBOTSCONFIG >/usr/share/caddy/robots.txt
-wget -qO- $CADDYCONFIG | sed -e "1c :$PORT" -e "s/\$AUUID/$AUUID/g" >/etc/caddy/Caddyfile
-wget -qO- $V2RAYCONFIG | sed "s/\$AUUID/$AUUID/g" >/v2ray.json
+wget -qO- $CONFIGCADDY | sed -e "1c :$PORT" -e "s/\$AUUID/$AUUID/g" >/etc/caddy/Caddyfile
+wget -qO- $CONFIGV2RAY | sed "s/\$AUUID/$AUUID/g" >/v2ray.json
 
 # start
-[[ "$TOREnable"      ==    "true" ]]    &&    tor &
+[[ "$EnableTOR"      ==    "true" ]]    &&    tor &
 
-[[ "$V2RAYEnable"    ==    "true" ]]    &&    /v2ray -config /v2ray.json &
+[[ "$EnableV2RAY"    ==    "true" ]]    &&    /v2ray -config /v2ray.json &
 
-[[ "$BROOKEnable"    ==    "true" ]]    &&    brook wsserver -l 127.0.0.1:3234 --path $BROOKPATH -p $APASSWORD &
+[[ "$EnableBROOK"    ==    "true" ]]    &&    brook wsserver -l 127.0.0.1:3234 --path $AUUID-brook -p $AUUID &
 
-[[ "$GOSTEnable"     ==    "true" ]]    &&    eval gost $GOSTMETHOD &
+[[ "$EnableGOST"     ==    "true" ]]    &&    eval gost $GOSTMETHOD &
 
-[[ "$SSEnable"       ==    "true" ]]    &&    ss-server -s 127.0.0.1 -p 1234 -k $APASSWORD -m $SSENCYPT --plugin /usr/bin/v2ray-plugin_linux_amd64 --plugin-opts "server;path=$SSPATH" &
+[[ "$EnableSS"       ==    "true" ]]    &&    ss-server -s 127.0.0.1 -p 1234 -k $AUUID -m $SSENCYPT --plugin /usr/bin/v2ray-plugin_linux_amd64 --plugin-opts "server;path=$AUUID-ss" &
 
 caddy run --config /etc/caddy/Caddyfile --adapter caddyfile

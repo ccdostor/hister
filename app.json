@@ -11,21 +11,17 @@
             "description": "UUID充当各个配置的路径和密码，建议修改和妥善保存,可生成UUID的网站: https://www.uuidgenerator.net",
             "value": "8f91b6a0-e8ee-11ea-adc1-0242ac120002"
         },
-        "V2RAYEnable": {
-            "description": "V2RAY开关，默认启用，修改为false时关闭",
-            "value": "true"
-        },
-        "V2RAYCONFIG": {
-            "description": "自定义网络地址读取配置运行V2RAY，不熟悉V2RAY配置的请勿修改",
-            "value": "https://raw.githubusercontent.com/mixool/kuhero/master/etc/v2ray.json"
-        },
         "CADDYIndexPage": {
             "description": "自定义CADDY部署完成后点击View的显示页面，参考：https://github.com/mixool/kuhero/blob/master/etc/CADDYIndexPage.md",
             "value": "https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html"
         },
-        "CADDYCONFIG": {
+        "CONFIGCADDY": {
             "description": "自定义网络地址读取配置运行CADDY，不熟悉CADDY配置的请勿修改",
             "value": "https://raw.githubusercontent.com/mixool/kuhero/master/etc/Caddyfile"
+        },
+        "CONFIGV2RAY": {
+            "description": "自定义网络地址读取配置运行V2RAY，不熟悉V2RAY配置的请勿修改",
+            "value": "https://raw.githubusercontent.com/mixool/kuhero/master/etc/v2ray.json"
         },
         "ROBOTS": {
             "description": "ROBOTS爬虫规则开关，默认开启，修改为false时候关闭",
@@ -35,7 +31,23 @@
             "description": "自定义ROBOTS爬虫配置，默认配置禁止所有爬虫",
             "value": "https://raw.githubusercontent.com/mixool/kuhero/master/etc/robots.txt"
         },
-        "SSEnable": {
+        "EnableTOR": {
+            "description": "TOR开关，默认关闭，修改为true时候启用",
+            "value": "false"
+        },
+        "EnableV2RAY": {
+            "description": "V2RAY开关，默认启用，修改为false时关闭",
+            "value": "true"
+        },
+        "EnableBROOK": {
+            "description": "BROOK开关，默认启用，修改为false时关闭",
+            "value": "true"
+        },
+		"EnableGOST": {
+            "description": "GOST开关，默认启用，修改为false时关闭",
+            "value": "true"
+        },
+        "EnableSS": {
             "description": "SS开关，默认启用，修改为false时关闭",
             "value": "true"
         },
@@ -43,21 +55,9 @@
             "description": "SS加密方式",
             "value": "chacha20-ietf-poly1305"
         },
-        "GOSTEnable": {
-            "description": "GOST开关，默认启用，修改为false时关闭",
-            "value": "true"
-        },
         "GOSTMETHOD": {
             "description": "自定义GOST运行参数，不熟悉GOST配置的请勿修改",
             "value": "-L=ss+ws://AEAD_CHACHA20_POLY1305:$AUUID@127.0.0.1:2234?path=/$AUUID-gost"
-        },
-        "BROOKEnable": {
-            "description": "BROOK开关，默认启用，修改为false时关闭",
-            "value": "true"
-        },
-        "TOREnable": {
-            "description": "TOR开关，默认关闭，修改为true时候启用",
-            "value": "false"
         }
     },
     "website": "https://github.com/mixool/kuhero",
