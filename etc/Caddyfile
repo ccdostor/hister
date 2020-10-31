@@ -12,7 +12,7 @@ header {
 @websocket_ss {
 header Connection *Upgrade*
 header Upgrade    websocket
-path $SSPATH
+path /$AUUID-ss
 }
 reverse_proxy @websocket_ss 127.0.0.1:1234
 
@@ -20,7 +20,7 @@ reverse_proxy @websocket_ss 127.0.0.1:1234
 @websocket_gost {
 header Connection *Upgrade*
 header Upgrade    websocket
-path $GOSTPATH
+path /$AUUID-gost
 }
 reverse_proxy @websocket_gost 127.0.0.1:2234
 
@@ -28,7 +28,7 @@ reverse_proxy @websocket_gost 127.0.0.1:2234
 @websocket_brook {
 header Connection *Upgrade*
 header Upgrade    websocket
-path $BROOKPATH
+path /$AUUID-brook
 }
 reverse_proxy @websocket_brook 127.0.0.1:3234
 
@@ -36,7 +36,7 @@ reverse_proxy @websocket_brook 127.0.0.1:3234
 @websocket_v2ray_vmess {
 header Connection *Upgrade*
 header Upgrade    websocket
-path $VMESSPATH
+path /$AUUID-vmess
 }
 reverse_proxy @websocket_v2ray_vmess 127.0.0.1:4234
 
@@ -44,13 +44,13 @@ reverse_proxy @websocket_v2ray_vmess 127.0.0.1:4234
 @websocket_v2ray_vless {
 header Connection *Upgrade*
 header Upgrade    websocket
-path $VLESSPATH
+path /$AUUID-vless
 }
 reverse_proxy @websocket_v2ray_vless 127.0.0.1:5234
 
 @websocket_v2ray_trojan {
 header Connection *Upgrade*
 header Upgrade    websocket
-path $TROJANPATH
+path /$AUUID-trojan
 }
 reverse_proxy @websocket_v2ray_trojan 127.0.0.1:6234

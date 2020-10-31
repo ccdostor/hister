@@ -4,17 +4,17 @@
         {
             "port": 4234,"listen": "127.0.0.1","protocol": "vmess",
             "settings": {"clients": [{"id": "$AUUID"}]},
-            "streamSettings": {"network": "ws","wsSettings": {"path": "$VMESSPATH"}}
+            "streamSettings": {"network": "ws","wsSettings": {"path": "$AUUID-vmess"}}
         },
         {
             "port": 5234,"listen": "127.0.0.1","protocol": "vless",
             "settings": {"clients": [{"id": "$AUUID"}],"decryption": "none"},
-            "streamSettings": {"network": "ws","wsSettings": {"path": "$VLESSPATH"}}
+            "streamSettings": {"network": "ws","wsSettings": {"path": "$AUUID-vless"}}
         },
         {
             "port": 6234,"listen": "127.0.0.1","protocol": "trojan",
-            "settings": {"clients": [{"password":"$APASSWORD"}]},
-            "streamSettings": {"network": "ws","wsSettings": {"path": "$TROJANPATH"}}
+            "settings": {"clients": [{"password":"$AUUID"}]},
+            "streamSettings": {"network": "ws","wsSettings": {"path": "$AUUID-trojan"}}
         }
     ],
     

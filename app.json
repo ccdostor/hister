@@ -1,19 +1,23 @@
 {
-    "name": "heroku",
-    "description": "heroku yes",
-    "keywords": ["heroku yes"],
+    "name": "kuhero",
+    "description": "websocket proxy on heroku",
+    "keywords": ["v2ray trojan-go shadowsocks gost brook tor"],
     "env": {
         "AA": {
-            "description": "初阶用户只需填写App name后按需修改以下APASSWORD和AUUID两项后点击页面最后的Deploy app按钮即可开始部署",
+            "description": "初阶用户只需填写App name后按需修改以下AUUID点击页面最后的Deploy app按钮即可开始部署",
             "value": "如出现错误，请检查参数格式或多尝试几次。使用自定义参数请务必先充分理解其含义"
         },
-        "APASSWORD": {
-            "description": "SS|BROOK|GOST|TROJAN使用的密码",
-            "value": "password"
+        "AUUID": {
+            "description": "UUID充当各个配置的路径和密码，建议修改和妥善保存,可生成UUID的网站: https://www.uuidgenerator.net",
+            "value": "8f91b6a0-e8ee-11ea-adc1-0242ac120002"
         },
-        "TOREnable": {
-            "description": "TOR开关，默认关闭，修改为true时候启用",
-            "value": "false"
+        "V2RAYEnable": {
+            "description": "V2RAY开关，默认启用，修改为false时关闭",
+            "value": "true"
+        },
+        "V2RAYCONFIG": {
+            "description": "自定义网络地址读取配置运行V2RAY，不熟悉V2RAY配置的请勿修改",
+            "value": "https://raw.githubusercontent.com/mixool/kuhero/master/etc/v2ray.json"
         },
         "CADDYIndexPage": {
             "description": "自定义CADDY部署完成后点击View的显示页面，参考：https://github.com/mixool/kuhero/blob/master/etc/CADDYIndexPage.md",
@@ -39,54 +43,22 @@
             "description": "SS加密方式",
             "value": "chacha20-ietf-poly1305"
         },
-        "SSPATH": {
-            "description": "SS路径",
-            "value": "/sspath"
-        },
         "GOSTEnable": {
             "description": "GOST开关，默认启用，修改为false时关闭",
             "value": "true"
         },
-        "GOSTPATH": {
-            "description": "GOST路径",
-            "value": "/gostpath"
-        },
         "GOSTMETHOD": {
             "description": "自定义GOST运行参数，不熟悉GOST配置的请勿修改",
-            "value": "-L=ss+ws://AEAD_CHACHA20_POLY1305:$APASSWORD@127.0.0.1:2234?path=$GOSTPATH"
+            "value": "-L=ss+ws://AEAD_CHACHA20_POLY1305:$AUUID@127.0.0.1:2234?path=/$AUUID-gost"
         },
         "BROOKEnable": {
             "description": "BROOK开关，默认启用，修改为false时关闭",
             "value": "true"
         },
-        "BROOKPATH": {
-            "description": "BROOK路径",
-            "value": "/brookpath"
+        "TOREnable": {
+            "description": "TOR开关，默认关闭，修改为true时候启用",
+            "value": "false"
         },
-        "V2RAYEnable": {
-            "description": "V2RAY开关，默认启用，修改为false时关闭",
-            "value": "true"
-        },
-        "VMESSPATH": {
-            "description": "V2RAY使用VMESS时的路径",
-            "value": "/vmesspath"
-        },
-        "VLESSPATH": {
-            "description": "V2RAY使用VLESS时的路径",
-            "value": "/vlesspath"
-        },
-		"TROJANPATH": {
-            "description": "V2RAY使用TROJAN时的路径",
-            "value": "/trojanpath"
-        },
-        "AUUID": {
-            "description": "V2RAY使用的UUID,可生成UUID的网站: https://www.uuidgenerator.net",
-            "value": "8f91b6a0-e8ee-11ea-adc1-0242ac120002"
-        },
-        "V2RAYCONFIG": {
-            "description": "自定义网络地址读取配置运行V2RAY，不熟悉V2RAY配置的请勿修改",
-            "value": "https://raw.githubusercontent.com/mixool/kuhero/master/etc/v2ray.json"
-        }
     },
     "website": "https://github.com/mixool/kuhero",
     "repository": "https://github.com/mixool/kuhero",
