@@ -50,7 +50,7 @@
         "ParameterSSENCYPT": {
             "description": "SS加密方式",
             "value": "chacha20-ietf-poly1305"
-        },
+        }
     },
     "website": "https://github.com/mixool/kuhero",
     "repository": "https://github.com/mixool/kuhero",
