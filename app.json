@@ -23,6 +23,18 @@
             "description": "自定义网络地址读取配置运行V2RAY，不熟悉V2RAY配置的请勿修改",
             "value": "https://raw.githubusercontent.com/mixool/kuhero/master/etc/v2ray.json"
         },
+        "EnableBROOK": {
+            "description": "默认关闭BROOK，修改为true时开启",
+            "value": "false"
+        },
+        "EnableGOST": {
+            "description": "默认关闭GOST，修改为true时开启",
+            "value": "false"
+        },
+        "EnableSS": {
+            "description": "默认启用SS，修改为false时关闭",
+            "value": "true"
+        },
         "EnableTOR": {
             "description": "默认启用TOR，修改为false时关闭",
             "value": "true"
@@ -31,26 +43,14 @@
             "description": "默认启用V2RAY，修改为false时关闭",
             "value": "true"
         },
-        "EnableSS": {
-            "description": "默认启用SS，修改为false时关闭",
-            "value": "true"
-        },
-        "EnableBROOK": {
-            "description": "默认关闭BROOK，修改为true时关闭",
-            "value": "false"
-        },
-        "EnableGOST": {
-            "description": "默认关闭GOST，修改为true时关闭",
-            "value": "false"
+        "ParameterGOSTMETHOD": {
+            "description": "自定义GOST运行参数，不熟悉GOST配置的请勿修改",
+            "value": "-L=ss+ws://AEAD_CHACHA20_POLY1305:$AUUID@127.0.0.1:2234?path=/$AUUID-gost"
         },
         "ParameterSSENCYPT": {
             "description": "SS加密方式",
             "value": "chacha20-ietf-poly1305"
         },
-        "ParameterGOSTMETHOD": {
-            "description": "自定义GOST运行参数，不熟悉GOST配置的请勿修改",
-            "value": "-L=ss+ws://AEAD_CHACHA20_POLY1305:$AUUID@127.0.0.1:2234?path=/$AUUID-gost"
-        }
     },
     "website": "https://github.com/mixool/kuhero",
     "repository": "https://github.com/mixool/kuhero",
