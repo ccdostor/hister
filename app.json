@@ -24,24 +24,24 @@
             "value": "https://raw.githubusercontent.com/mixool/kuhero/master/etc/v2ray.json"
         },
         "EnableTOR": {
-            "description": "TOR开关，默认关闭，修改为true时候启用",
-            "value": "false"
+            "description": "默认启用TOR，修改为false时关闭",
+            "value": "true"
         },
         "EnableV2RAY": {
-            "description": "V2RAY开关，默认启用，修改为false时关闭",
-            "value": "true"
-        },
-        "EnableBROOK": {
-            "description": "BROOK开关，默认启用，修改为false时关闭",
-            "value": "true"
-        },
-        "EnableGOST": {
-            "description": "GOST开关，默认启用，修改为false时关闭",
+            "description": "默认启用V2RAY，修改为false时关闭",
             "value": "true"
         },
         "EnableSS": {
-            "description": "SS开关，默认启用，修改为false时关闭",
+            "description": "默认启用SS，修改为false时关闭",
             "value": "true"
+        },
+        "EnableBROOK": {
+            "description": "默认关闭BROOK，修改为true时关闭",
+            "value": "false"
+        },
+        "EnableGOST": {
+            "description": "默认关闭GOST，修改为true时关闭",
+            "value": "false"
         },
         "ParameterSSENCYPT": {
             "description": "SS加密方式",
@@ -50,14 +50,6 @@
         "ParameterGOSTMETHOD": {
             "description": "自定义GOST运行参数，不熟悉GOST配置的请勿修改",
             "value": "-L=ss+ws://AEAD_CHACHA20_POLY1305:$AUUID@127.0.0.1:2234?path=/$AUUID-gost"
-        },
-        "ROBOTS": {
-            "description": "ROBOTS爬虫规则开关，默认开启，修改为false时候关闭",
-            "value": "true"
-        },
-        "ROBOTSCONFIG": {
-            "description": "自定义ROBOTS爬虫配置，默认配置禁止所有爬虫",
-            "value": "https://raw.githubusercontent.com/mixool/kuhero/master/etc/robots.txt"
         }
     },
     "website": "https://github.com/mixool/kuhero",
