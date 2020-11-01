@@ -16,11 +16,11 @@
             "value": "https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html"
         },
         "CONFIGCADDY": {
-            "description": "自定义网络地址读取配置运行CADDY，不熟悉CADDY配置的请勿修改，学习caddy: https://caddyserver.com/",
+            "description": "自定义网络地址读取配置运行CADDY，不熟悉CADDY配置的请勿修改 https://caddyserver.com/",
             "value": "https://raw.githubusercontent.com/mixool/kuhero/master/etc/Caddyfile"
         },
         "CONFIGV2RAY": {
-            "description": "自定义网络地址读取配置运行V2RAY，不熟悉V2RAY配置的请勿修改，学习v2ray: https://www.v2fly.org/",
+            "description": "自定义网络地址读取配置运行V2RAY，不熟悉V2RAY配置的请勿修改 https://www.v2fly.org/",
             "value": "https://raw.githubusercontent.com/mixool/kuhero/master/etc/v2ray.json"
         },
         "ParameterSSENCYPT": {
