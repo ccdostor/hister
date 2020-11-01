@@ -1,6 +1,6 @@
 > 提醒： 滥用可能导致账户被BAN！！！[Telegram讨论群](https://t.me/starts_sh_group)  
   
-* 本项目可在heroku上选择性的部署v2ray(trojan-go)，shadowsocks，gost，brook等，方便客户端各取所需！  
+* 本项目在heroku上使用v2ray同时部署vmess vless trojan shadowsocks socks等协议，另可访问tor网络  
   
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/mixool/kuhero)  
   
@@ -9,7 +9,7 @@
 如出现错误，可以多尝试几次，待部署完成后页面底部会显示Your app was successfully deployed  
   * 点击Manage App可在Settings下的Config Vars项**查看和重新设置参数**  
   * 点击View跳转[欢迎页面](https://github.com/mixool/kuhero/blob/master/etc/CADDYIndexPage.md)域名即为heroku分配的项目域名，格式为`appname.herokuapp.com`，客户端会用到此域名  
-  * 默认协议密码为$UUID，WS路径为$UUID-[vless|vmess|trojan|ss|gost|brook]格式
+  * 默认协议密码为$UUID，WS路径为$UUID-[vmess|vless|trojan|ss|socks]格式
   
 ### 客户端
 * **务必替换所有的appname.herokuapp.com为heroku分配的项目域名**  
@@ -66,25 +66,6 @@
 * 加密：chacha20-ietf-poly1305
 * 插件程序：v2ray-plugin_windows_amd64.exe  //需将插件https://github.com/shadowsocks/v2ray-plugin/releases下载解压后放至shadowsocks同目录
 * 插件选项: tls;host=appname.herokuapp.com;path=/8f91b6a0-e8ee-11ea-adc1-0242ac120002-ss
-```
-</details>
-  
-<details>
-<summary>gost</summary>
-
-```bash
-* 客户端下载：https://github.com/ginuerzh/gost/releases
-* 选择gost-windows-amd64-*.zip下载解压后复制gost的exe文件在电脑中的绝对路径，新建run.bat文件编辑内容如下保存后双击运行：     
-C:\Users\Administrator\App\gost\gost-windows-amd64.exe -L :1080 -F=ss+wss://AEAD_CHACHA20_POLY1305:8f91b6a0-e8ee-11ea-adc1-0242ac120002@appname.herokuapp.com:443?path=/8f91b6a0-e8ee-11ea-adc1-0242ac120002-gost
-```
-</details>
-  
-<details>
-<summary>brook</summary>
-
-```bash
-* 客户端下载：https://github.com/txthinking/brook/releases
-* 选择Brook.exe下载运行，配置wsserver内容wss://appname.herokuapp.com:443/8f91b6a0-e8ee-11ea-adc1-0242ac120002-brook以及密码8f91b6a0-e8ee-11ea-adc1-0242ac120002
 ```
 </details>
   

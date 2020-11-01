@@ -1,7 +1,7 @@
 {
     "name": "kuhero",
-    "description": "websocket proxy on heroku",
-    "keywords": ["v2ray trojan-go shadowsocks gost brook tor"],
+    "description": "v2ray websocket proxy on heroku",
+    "keywords": ["v2ray vmess vless trojan shadowsocks tor"],
     "env": {
         "AA": {
             "description": "初阶用户只需填写App name后按需修改以下AUUID点击页面最后的Deploy app按钮即可开始部署",
@@ -22,30 +22,6 @@
         "CONFIGV2RAY": {
             "description": "自定义网络地址读取配置运行V2RAY，不熟悉V2RAY配置的请勿修改",
             "value": "https://raw.githubusercontent.com/mixool/kuhero/master/etc/v2ray.json"
-        },
-        "EnableBROOK": {
-            "description": "默认关闭BROOK，修改为true时开启",
-            "value": "false"
-        },
-        "EnableGOST": {
-            "description": "默认关闭GOST，修改为true时开启",
-            "value": "false"
-        },
-        "EnableSS": {
-            "description": "默认启用SS，修改为false时关闭",
-            "value": "true"
-        },
-        "EnableTOR": {
-            "description": "默认启用TOR，修改为false时关闭",
-            "value": "true"
-        },
-        "EnableV2RAY": {
-            "description": "默认启用V2RAY，修改为false时关闭",
-            "value": "true"
-        },
-        "ParameterGOSTMETHOD": {
-            "description": "自定义GOST运行参数，不熟悉GOST配置的请勿修改",
-            "value": "-L=ss+ws://AEAD_CHACHA20_POLY1305:$AUUID@127.0.0.1:2234?path=/$AUUID-gost"
         },
         "ParameterSSENCYPT": {
             "description": "SS加密方式",
