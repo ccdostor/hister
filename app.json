@@ -1,10 +1,10 @@
 {
     "name": "kuhero",
     "description": "v2ray websocket proxy on heroku",
-    "keywords": ["v2ray vmess vless trojan shadowsocks tor"],
+    "keywords": ["v2ray vmess vless trojan shadowsocks socks tor"],
     "env": {
         "AA": {
-            "description": "初阶用户只需填写App name后按需修改以下AUUID点击页面最后的Deploy app按钮即可开始部署",
+            "description": "初阶用户只需修改以下AUUID点击页面最后的Deploy app按钮即可开始部署",
             "value": "如出现错误，请检查参数格式或多尝试几次。使用自定义参数请务必先充分理解其含义"
         },
         "AUUID": {

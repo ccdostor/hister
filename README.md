@@ -1,6 +1,7 @@
 > 提醒： 滥用可能导致账户被BAN！！！[Telegram讨论群](https://t.me/starts_sh_group)  
   
-* 本项目在heroku上使用v2ray同时部署vmess vless trojan shadowsocks socks等协议，另可访问tor网络  
+* 使用v2ray+caddy同时部署通过ws传输的vmess vless trojan shadowsocks socks等协议
+* 支持tor网络，且可通过自定义网络配置文件启动v2ray和caddy来按需配置各种功能
   
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/mixool/kuhero)  
   
