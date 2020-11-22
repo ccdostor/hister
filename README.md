@@ -2,7 +2,6 @@
   
 * 使用v2ray+caddy同时部署通过ws传输的vmess vless trojan shadowsocks socks等协议  
 * 支持tor网络，且可通过自定义网络配置文件启动v2ray和caddy来按需配置各种功能  
-* 由于本项目使用了几个变量实现灵活的功能导致后期代码更新可能会影响之前部署的app，使用[lazyku](https://github.com/mixool/lazyku)即可避免  
   
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/mixool/kuhero)  
   
