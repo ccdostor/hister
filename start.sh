@@ -10,6 +10,10 @@ wget -qO- $CONFIGV2RAY | sed -e "s/\$AUUID/$AUUID/g" -e "s/\$ParameterSSENCYPT/$
 mkdir -p /usr/share/caddy/$AUUID && wget -O /usr/share/caddy/$AUUID/StoreFiles $StoreFiles
 wget -P /usr/share/caddy/$AUUID -i /usr/share/caddy/$AUUID/StoreFiles 
 
+cat <<EOF >/usr/share/caddy/$AUUID/downloadStoreFiles.html
+<a href="v2ray-windows-64.zip" download>v2ray-windows-64.zip</a>
+EOF
+
 # start
 tor &
 
