@@ -10,7 +10,7 @@ header {
 }
 
 basicauth /$AUUID/* {
-	$AUUID $MYUUID-HASH
+    $AUUID $MYUUID-HASH
 }
 
 @websocket_v2ray_vmess {
