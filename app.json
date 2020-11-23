@@ -8,7 +8,7 @@
             "value": "如出现错误，请检查参数格式或多尝试几次。使用自定义参数请务必先充分理解其含义"
         },
         "AUUID": {
-            "description": "UUID充当各个配置的路径和密码，建议修改和妥善保存,可生成UUID的网站: https://www.uuidgenerator.net",
+            "description": "UUID充当各个配置的路径和账号密码，建议修改和妥善保存,可生成UUID的网站: https://www.uuidgenerator.net",
             "value": "8f91b6a0-e8ee-11ea-adc1-0242ac120002"
         },
         "CADDYIndexPage": {
@@ -26,6 +26,10 @@
         "ParameterSSENCYPT": {
             "description": "SS加密方式，查看支持协议: https://www.v2fly.org/config/protocols/shadowsocks.html",
             "value": "chacha20-ietf-poly1305"
+        },
+        "StoreFiles": {
+            "description": "自定义网络地址读取存储文件列表",
+            "value": "https://raw.githubusercontent.com/mixool/kuhero/master/etc/StoreFiles"
         }
     },
     "website": "https://github.com/mixool/kuhero",
