@@ -25,3 +25,7 @@
 * [loruki-website](https://github.com/bradtraversy/loruki-website/archive/master.zip)  
   
 * [bongo.cat一只音乐的猫](https://github.com/Externalizable/bongo.cat/archive/master.zip) [演示](https://bongo.cat/)  
+  
+* [3D CSS Stress](https://github.com/propjockey/DOMinion-build-demo/archive/master.zip) [演示](https://propjockey.github.io/DOMinion-build-demo/index.html)  
+  
+* [css-sweeper 扫雷](https://github.com/propjockey/DOMinion-build-demo/archive/master.zip) [演示](https://propjockey.github.io/css-sweeper/)  
